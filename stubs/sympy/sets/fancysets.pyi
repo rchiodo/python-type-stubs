@@ -1,5 +1,9 @@
+from typing import Any, Generator, Literal, NoReturn, Self
+from sympy.core.basic import Basic
+from sympy.core.logic import And
+from sympy.core.numbers import Integer, Rational
 from sympy.core.singleton import Singleton
-from sympy.sets.sets import Interval, Set
+from sympy.sets.sets import FiniteSet, Interval, ProductSet, Set, Union
 
 class Rationals(Set, metaclass=Singleton):
     """

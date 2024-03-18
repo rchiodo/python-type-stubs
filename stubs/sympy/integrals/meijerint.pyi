@@ -1,4 +1,6 @@
+from sympy.core.basic import Basic
 from sympy.core.symbol import Dummy
+from sympy.functions.elementary.piecewise import Piecewise
 
 """
 Integrate functions by rewriting them as Meijer G-functions.

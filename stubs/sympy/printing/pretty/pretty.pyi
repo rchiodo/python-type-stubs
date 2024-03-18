@@ -1,3 +1,4 @@
+from sympy.printing.pretty.stringpict import prettyForm
 from sympy.printing.printer import Printer, print_function
 
 pprint_use_unicode = ...

@@ -1,3 +1,6 @@
+from typing import Any, Self
+from sympy.matrices.dense import MutableDenseMatrix
+from sympy.matrices.expressions.matexpr import MatrixElement
 from sympy.polys.matrices import DomainMatrix
 from sympy.matrices.matrixbase import MatrixBase
 from sympy.matrices.kind import MatrixKind

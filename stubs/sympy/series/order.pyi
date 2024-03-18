@@ -1,4 +1,6 @@
+from typing import Any, Self
 from sympy.core import Expr
+from sympy.core.basic import Basic
 from sympy.core.cache import cacheit
 
 class Order(Expr):

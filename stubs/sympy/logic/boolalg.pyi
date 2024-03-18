@@ -1,9 +1,12 @@
+from typing import Any, Generator, Literal, Self
 from sympy.core.basic import Basic
 from sympy.core.cache import cacheit
 from sympy.core.decorators import sympify_method_args, sympify_return
-from sympy.core.function import Application
+from sympy.core.function import Application, Derivative
 from sympy.core.operations import LatticeOp
+from sympy.core.relational import Eq, Ne
 from sympy.core.singleton import Singleton
+from sympy.core.symbol import Symbol
 
 """
 Boolean algebra module for SymPy

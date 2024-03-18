@@ -1,4 +1,8 @@
 """Tools for setting up interactive sessions. """
+from code import InteractiveConsole
+from typing import Any
+
+
 preexec_source = ...
 verbose_message = ...
 no_ipython = ...
@@ -43,7 +47,7 @@ def init_ipython_session(shell=..., argv=..., auto_symbols=..., auto_int_to_Inte
     """Construct new IPython session. """
     ...
 
-def init_python_session() -> SymPyConsole:
+def init_python_session() -> Any:
     """Construct new Python session. """
     class SymPyConsole(InteractiveConsole):
         """An interactive console with readline support. """

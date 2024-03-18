@@ -1,4 +1,9 @@
 """Tools for solving inequalities and systems of inequalities. """
+from typing import Any
+from sympy.core.logic import And
+from sympy.sets.sets import FiniteSet, Union
+
+
 def solve_poly_inequality(poly, rel) -> list[Any]:
     """Solve a polynomial inequality with rational coefficients.
 

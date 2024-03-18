@@ -1,3 +1,4 @@
+from typing import Any, Self
 from sympy.matrices.expressions.matexpr import MatrixExpr
 
 class CompanionMatrix(MatrixExpr):

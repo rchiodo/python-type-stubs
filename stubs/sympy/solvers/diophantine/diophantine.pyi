@@ -1,4 +1,11 @@
 __all__ = ['diophantine', 'classify_diop']
+from types import NotImplementedType
+from typing import Any, Generator, Literal, NoReturn
+
+from sympy.matrices.dense import MutableDenseMatrix
+from sympy.series.order import Order
+
+
 class DiophantineSolutionSet(set):
     """
     Container for a set of solutions to a particular diophantine equation.

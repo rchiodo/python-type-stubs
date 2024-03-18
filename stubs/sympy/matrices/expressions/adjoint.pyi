@@ -1,3 +1,5 @@
+from sympy.core.basic import Basic
+from sympy.core.function import UndefinedFunction
 from sympy.matrices.expressions.matexpr import MatrixExpr
 
 class Adjoint(MatrixExpr):

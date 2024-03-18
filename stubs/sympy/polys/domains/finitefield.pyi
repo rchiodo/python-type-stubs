@@ -1,4 +1,6 @@
-import flint
+from typing import Any, Literal, Self
+
+from sympy.core.numbers import Integer
 from sympy.external.gmpy import GROUND_TYPES
 from sympy.utilities.decorator import doctest_depends_on
 from sympy.polys.domains.field import Field
@@ -112,7 +114,7 @@ class FiniteField(Field, SimpleDomain):
         ...
     
     @property
-    def tp(self) -> Any | type[cls]:
+    def tp(self) -> Any | type["FiniteField"]:
         ...
     
     def __str__(self) -> str:
@@ -137,7 +139,7 @@ class FiniteField(Field, SimpleDomain):
         """Convert ``a`` to a SymPy object. """
         ...
     
-    def from_sympy(self, a) -> Any | cls:
+    def from_sympy(self, a) -> Any | "FiniteField":
         """Convert SymPy's Integer to SymPy's ``Integer``. """
         ...
     
@@ -161,43 +163,43 @@ class FiniteField(Field, SimpleDomain):
         """Returns True if ``a`` is non-positive. """
         ...
     
-    def from_FF(K1, a, K0=...) -> Any | cls:
+    def from_FF(K1, a, K0=...) -> Any | "FiniteField":
         """Convert ``ModularInteger(int)`` to ``dtype``. """
         ...
     
-    def from_FF_python(K1, a, K0=...) -> Any | cls:
+    def from_FF_python(K1, a, K0=...) -> Any | "FiniteField":
         """Convert ``ModularInteger(int)`` to ``dtype``. """
         ...
     
-    def from_ZZ(K1, a, K0=...) -> Any | cls:
+    def from_ZZ(K1, a, K0=...) -> Any | "FiniteField":
         """Convert Python's ``int`` to ``dtype``. """
         ...
     
-    def from_ZZ_python(K1, a, K0=...) -> Any | cls:
+    def from_ZZ_python(K1, a, K0=...) -> Any | "FiniteField":
         """Convert Python's ``int`` to ``dtype``. """
         ...
     
-    def from_QQ(K1, a, K0=...) -> Any | cls | None:
+    def from_QQ(K1, a, K0=...) -> Any | "FiniteField" | None:
         """Convert Python's ``Fraction`` to ``dtype``. """
         ...
     
-    def from_QQ_python(K1, a, K0=...) -> Any | cls | None:
+    def from_QQ_python(K1, a, K0=...) -> Any | "FiniteField" | None:
         """Convert Python's ``Fraction`` to ``dtype``. """
         ...
     
-    def from_FF_gmpy(K1, a, K0=...) -> Any | cls:
+    def from_FF_gmpy(K1, a, K0=...) -> Any | "FiniteField":
         """Convert ``ModularInteger(mpz)`` to ``dtype``. """
         ...
     
-    def from_ZZ_gmpy(K1, a, K0=...) -> Any | cls:
+    def from_ZZ_gmpy(K1, a, K0=...) -> Any | "FiniteField":
         """Convert GMPY's ``mpz`` to ``dtype``. """
         ...
     
-    def from_QQ_gmpy(K1, a, K0=...) -> Any | cls | None:
+    def from_QQ_gmpy(K1, a, K0=...) -> Any | "FiniteField" | None:
         """Convert GMPY's ``mpq`` to ``dtype``. """
         ...
     
-    def from_RealField(K1, a, K0) -> Any | cls | None:
+    def from_RealField(K1, a, K0) -> Any | "FiniteField" | None:
         """Convert mpmath's ``mpf`` to ``dtype``. """
         ...
     
@@ -205,7 +207,7 @@ class FiniteField(Field, SimpleDomain):
         """Returns True if ``a`` is a quadratic residue modulo p. """
         ...
     
-    def exsqrt(self, a) -> Any | cls | Literal[0] | None:
+    def exsqrt(self, a) -> Any | "FiniteField" | Literal[0] | None:
         """Square root modulo p of ``a`` if it is a quadratic residue.
 
         Explanation
@@ -217,3 +219,4 @@ class FiniteField(Field, SimpleDomain):
 
 
 GF = ...
+FF = ...

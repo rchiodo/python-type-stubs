@@ -1,4 +1,7 @@
+from typing import Any
+from sympy.core.basic import Basic
 from sympy.core.symbol import Dummy
+from sympy.functions.elementary.piecewise import Piecewise
 
 def components(f, x) -> set[Any]:
     """

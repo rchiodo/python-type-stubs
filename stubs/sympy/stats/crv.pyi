@@ -1,5 +1,11 @@
+from typing import Any, Literal, Self
+from sympy import Basic, Equality, FiniteSet, Integral, Ne
 from sympy.core.cache import cacheit
-from sympy.stats.rv import ConditionalDomain, Distribution, NamedArgsMixin, PSpace, ProductDomain, RandomDomain, SingleDomain, SinglePSpace
+from sympy.core.function import Lambda
+from sympy.core.logic import And
+from sympy.core.relational import Relational
+from sympy.sets.sets import Union
+from sympy.stats.rv import ConditionalDomain, Distribution, NamedArgsMixin, PSpace, ProductDomain, RandomDomain, RandomSymbol, SingleDomain, SinglePSpace
 
 """
 Continuous Random Variables Module

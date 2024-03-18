@@ -1,3 +1,6 @@
+from typing import Any, Generator, Literal
+
+
 def binomial_coefficients(n) -> dict[tuple[Literal[0], int] | tuple[int, Literal[0]], int]:
     """Return a dictionary containing pairs :math:`{(k1,k2) : C_kn}` where
     :math:`C_kn` are binomial coefficients and :math:`n=k1+k2`.

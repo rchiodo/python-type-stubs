@@ -1,3 +1,4 @@
+from typing import Self
 from sympy.matrices.expressions import MatrixExpr
 
 class DFT(MatrixExpr):

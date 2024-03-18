@@ -1,3 +1,9 @@
+from typing import Any
+
+from sympy.core.add import Add
+from sympy.series.order import Order
+
+
 def collect(expr, syms, func=..., evaluate=..., exact=..., distribute_order_term=...):
     """
     Collect additive terms of an expression.

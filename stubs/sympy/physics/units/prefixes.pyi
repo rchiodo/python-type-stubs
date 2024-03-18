@@ -1,3 +1,4 @@
+from typing import Any, Self
 from sympy.core.expr import Expr
 
 """

@@ -1,6 +1,10 @@
 """
 Several methods to simplify expressions involving unit objects.
 """
+from sympy.core.add import Add
+from sympy.physics.units.quantities import Quantity
+
+
 def convert_to(expr, target_units, unit_system=...) -> Add | Quantity:
     """
     Convert ``expr`` to the same expression with all of its units and quantities

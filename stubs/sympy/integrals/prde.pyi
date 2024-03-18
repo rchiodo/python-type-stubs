@@ -14,6 +14,12 @@ right hand side of the equation (i.e., gi in k(t)), and Q is a list of terms on
 the right hand side of the equation (i.e., qi in k[t]).  See the docstring of
 each function for more information.
 """
+from typing import Any
+
+from sympy.polys.polymatrix import PolyMatrix
+from sympy.series.order import Order
+
+
 zeros = ...
 eye = ...
 def prde_normal_denom(fa, fd, G, DE) -> tuple[Any, tuple[Any, Any], list[Any], Any]:

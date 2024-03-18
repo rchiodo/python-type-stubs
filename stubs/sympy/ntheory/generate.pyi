@@ -1,3 +1,6 @@
+from array import array
+from typing import Any, Generator
+from sympy.core.function import UndefinedFunction
 from sympy.utilities.decorator import deprecated
 
 """

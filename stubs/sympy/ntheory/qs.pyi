@@ -1,3 +1,6 @@
+from typing import Any, Literal
+
+
 class SievePolynomial:
     def __init__(self, modified_coeff=..., a=..., b=...) -> None:
         """This class denotes the seive polynomial.

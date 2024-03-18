@@ -1,4 +1,7 @@
 """Symbolic primitives + unicode/ASCII abstraction for pretty.py"""
+from typing import Any, LiteralString
+
+
 unicode_warnings = ...
 def U(name) -> str | None:
     """

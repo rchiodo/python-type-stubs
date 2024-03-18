@@ -1,3 +1,6 @@
+from typing import _T_co, Any
+
+
 class AmbiguityWarning(Warning):
     ...
 

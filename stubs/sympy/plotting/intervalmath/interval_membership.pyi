@@ -1,3 +1,6 @@
+from typing import Any, Iterator, Literal
+
+
 class intervalMembership:
     """Represents a boolean expression returned by the comparison of
     the interval object.

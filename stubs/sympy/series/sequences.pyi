@@ -1,7 +1,11 @@
+from typing import Any, Generator, Iterator, NoReturn, Self
 from sympy.core.basic import Basic
 from sympy.core.cache import cacheit
 from sympy.core.decorators import call_highest_priority
+from sympy.core.relational import Eq, Ne, Relational
 from sympy.core.singleton import Singleton
+from sympy.series.order import Order
+from sympy.sets.sets import Complement, FiniteSet, Intersection, Interval, Union
 
 class SeqBase(Basic):
     """Base class for sequences"""

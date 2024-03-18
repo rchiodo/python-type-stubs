@@ -1,4 +1,7 @@
 """Real and complex root isolation and refinement algorithms. """
+from typing import Any, Literal, LiteralString, Self
+
+
 def dup_sturm(f, K) -> list[list[Any] | list[int] | Any]:
     """
     Computes the Sturm sequence of ``f`` in ``F[x]``.

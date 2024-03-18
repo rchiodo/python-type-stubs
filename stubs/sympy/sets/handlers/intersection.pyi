@@ -1,5 +1,5 @@
-from sympy.sets.fancysets import ComplexRegion, ImageSet, Integers, Naturals, Range, Rationals, Reals
-from sympy.sets.sets import EmptySet, FiniteSet, Interval, ProductSet, Set, UniversalSet
+from sympy.sets.fancysets import CartesianComplexRegion, ComplexRegion, ImageSet, Integers, Naturals, PolarComplexRegion, Range, Rationals, Reals
+from sympy.sets.sets import Complement, EmptySet, FiniteSet, Intersection, Interval, ProductSet, Set, Union, UniversalSet
 from sympy.sets.conditionset import ConditionSet
 
 intersection_sets = ...

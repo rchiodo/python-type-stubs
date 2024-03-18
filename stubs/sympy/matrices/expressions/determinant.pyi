@@ -1,3 +1,5 @@
+from typing import Self
+from sympy.core.basic import Basic
 from sympy.core.expr import Expr
 
 class Determinant(Expr):

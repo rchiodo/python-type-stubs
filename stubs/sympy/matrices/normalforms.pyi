@@ -1,4 +1,8 @@
 '''Functions returning normal forms of matrices'''
+from typing import Any
+from sympy.matrices.dense import MutableDenseMatrix
+
+
 def smith_normal_form(m, domain=...) -> MutableDenseMatrix:
     '''
     Return the Smith Normal Form of a matrix `m` over the ring `domain`.

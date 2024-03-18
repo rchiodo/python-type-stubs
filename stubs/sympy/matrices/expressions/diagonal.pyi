@@ -1,4 +1,7 @@
+from typing import Any, Self
+from sympy.core.expr import Expr
 from sympy.matrices.expressions import MatrixExpr
+from sympy.matrices.matrixbase import MatrixBase
 
 class DiagonalMatrix(MatrixExpr):
     """DiagonalMatrix(M) will create a matrix expression that

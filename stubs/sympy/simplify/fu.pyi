@@ -1,4 +1,6 @@
+from typing import Any, Callable, Literal
 from sympy import SYMPY_DEBUG
+from sympy.series.order import Order
 
 def TR0(rv):
     """Simplification of rational polynomials, trying to simplify

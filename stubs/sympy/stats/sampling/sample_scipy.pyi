@@ -10,7 +10,7 @@ scipy = ...
 def do_sample_scipy(dist, size, seed) -> None:
     ...
 
-@do_sample_scipy.register(SingleContinuousDistribution)
+@do_sample_scipy.register(SingleContinuousDistribution) # type: ignore
 def _(dist: SingleContinuousDistribution, size, seed) -> int:
     class scipy_pdf(scipy.stats.rv_continuous):
         ...
@@ -57,9 +57,9 @@ def _(dist: BetaDistribution, size, seed):
 def _(dist: CauchyDistribution, size, seed):
     ...
 
-@do_sample_scipy.register(DiscreteDistributionHandmade)
+@do_sample_scipy.register(DiscreteDistributionHandmade) # type: ignore
 def _(dist: DiscreteDistributionHandmade, size, seed) -> int:
-    class scipy_pmf(rv_discrete):
+    class scipy_pmf():
         ...
     
     
@@ -92,7 +92,7 @@ def _(dist: YuleSimonDistribution, size, seed):
 def _(dist: ZetaDistribution, size, seed):
     ...
 
-@do_sample_scipy.register(SingleFiniteDistribution)
+@do_sample_scipy.register(SingleFiniteDistribution) # type: ignore
 def _(dist: SingleFiniteDistribution, size, seed) -> int:
     ...
 

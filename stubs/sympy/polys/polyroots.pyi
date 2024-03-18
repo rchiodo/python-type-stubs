@@ -1,3 +1,5 @@
+from typing import Any
+from sympy.functions.elementary.piecewise import Piecewise
 from sympy.utilities import public
 
 """Algorithms for computing symbolic roots of polynomials. """

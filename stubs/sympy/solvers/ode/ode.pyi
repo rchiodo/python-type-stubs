@@ -1,4 +1,9 @@
+from typing import Any, Generator, Literal, NoReturn, Tuple
+from sympy.core.add import Add
+from sympy.core.basic import Basic
 from sympy.core.multidimensional import vectorize
+from sympy.core.relational import Eq, Equality, Ne, Relational
+from sympy.core.symbol import Symbol
 
 r"""
 This module contains :py:meth:`~sympy.solvers.ode.dsolve` and different helper

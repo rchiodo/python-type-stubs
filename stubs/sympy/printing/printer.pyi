@@ -1,5 +1,5 @@
 import inspect
-from typing import Any, Type
+from typing import Any, Callable, Generator, Type
 from contextlib import contextmanager
 
 """Printing subsystem driver

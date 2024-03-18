@@ -1,4 +1,6 @@
+from typing import Any, Callable, Literal, Self
 from sympy.core import Expr
+from sympy.core.function import UndefinedFunction
 
 """
 Expand Hypergeometric (and Meijer G) functions into named

@@ -1,3 +1,4 @@
+from typing import Any, Self
 from sympy.polys.domains.field import Field
 from sympy.polys.domains.compositedomain import CompositeDomain
 from sympy.polys.polyclasses import DMF

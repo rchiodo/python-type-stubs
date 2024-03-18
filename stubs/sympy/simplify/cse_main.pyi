@@ -1,5 +1,11 @@
 """ Tools for doing common subexpression elimination.
 """
+from collections import defaultdict
+from typing import Any
+
+from sympy.core.containers import OrderedSet
+
+
 basic_optimizations = ...
 def reps_toposort(r) -> list[Any]:
     """Sort replacements ``r`` so (k1, v1) appears before (k2, v2)

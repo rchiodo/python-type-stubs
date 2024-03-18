@@ -18,6 +18,9 @@ The tables for polynomials $T$ of degrees 4 through 6, produced by this code,
 are recorded in the resolvent_lookup.py module.
 
 """
+from typing import Any, Literal, LiteralString
+
+
 class GaloisGroupException(Exception):
     ...
 

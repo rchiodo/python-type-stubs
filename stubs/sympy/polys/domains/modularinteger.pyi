@@ -1,4 +1,5 @@
-from typing import Any
+from types import NotImplementedType
+from typing import Any, LiteralString, Self
 from sympy.polys.polyutils import PicklableWithSlots
 from sympy.polys.domains.domainelement import DomainElement
 from sympy.utilities import public
@@ -98,7 +99,7 @@ class ModularInteger(PicklableWithSlots, DomainElement):
 
 
 _modular_integer_cache: dict[tuple[Any, Any, Any], type[ModularInteger]] = ...
-def ModularIntegerFactory(_mod, _dom, _sym, parent) -> type[Any] | type[cls]:
+def ModularIntegerFactory(_mod, _dom, _sym, parent) -> type[Any]:
     """Create custom class for specific integer modulus."""
     ...
 

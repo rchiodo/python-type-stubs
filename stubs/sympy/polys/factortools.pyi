@@ -1,5 +1,5 @@
+from typing import Any, Literal
 from sympy.external.gmpy import GROUND_TYPES
-from flint import fmpz_poly
 
 """Polynomial factorization routines in characteristic zero. """
 if GROUND_TYPES == 'flint':

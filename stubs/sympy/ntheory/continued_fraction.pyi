@@ -1,3 +1,11 @@
+from typing import Any, Generator
+from sympy.core.add import Add
+from sympy.core.basic import Basic
+from sympy.core.function import UndefinedFunction
+from sympy.core.mul import Mul
+from sympy.series.order import Order
+
+
 def continued_fraction(a) -> list:
     """Return the continued fraction representation of a Rational or
     quadratic irrational.

@@ -46,6 +46,9 @@ For the sake of completeness, `f(n)` can be:
     [2] a rational function        -> rsolve_ratio
     [3] a hypergeometric function  -> rsolve_hyper
 """
+from typing import Any
+
+
 def rsolve_poly(coeffs, f, n, shift=..., **hints):
     r"""
     Given linear recurrence operator `\operatorname{L}` of order

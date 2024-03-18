@@ -1,3 +1,7 @@
+from types import NotImplementedType
+from typing import Any, Self
+from sympy.polys.matrices.ddm import DDM
+from sympy.polys.matrices.dfm import DFM_dummy
 from sympy.utilities.decorator import doctest_depends_on
 
 """

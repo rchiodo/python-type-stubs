@@ -1,4 +1,7 @@
 """Basic tools for dense recursive polynomials in ``K[x]`` or ``K[X]``. """
+from typing import Any, Literal
+
+
 ninf = ...
 def poly_LC(f, K):
     """

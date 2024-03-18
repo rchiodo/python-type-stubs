@@ -3,6 +3,9 @@
 Routines for computing eigenvectors with DomainMatrix.
 
 """
+from typing import Any
+
+
 def dom_eigenvects(A, l=...) -> tuple[list[Any], list[Any]]:
     ...
 

@@ -1,4 +1,6 @@
-from sympy.sets.sets import Set
+from typing import Any, Self
+from sympy.core.logic import And
+from sympy.sets.sets import Complement, FiniteSet, Intersection, Set, Union
 
 adummy = ...
 class ConditionSet(Set):

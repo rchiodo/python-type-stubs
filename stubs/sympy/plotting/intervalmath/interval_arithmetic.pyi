@@ -11,6 +11,10 @@ arithmetic.
 
 The module uses numpy for speed which cannot be achieved with mpmath.
 """
+from types import NotImplementedType
+from typing import Self
+
+
 class interval:
     """ Represents an interval containing floating points as start and
     end of the interval

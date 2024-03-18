@@ -1,3 +1,7 @@
+from ctypes import Array, c_float
+from typing import Any
+
+
 def cross(a, b) -> tuple[Any, Any, Any]:
     ...
 

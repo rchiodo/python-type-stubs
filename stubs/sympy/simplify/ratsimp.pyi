@@ -1,3 +1,6 @@
+from typing import Any
+
+
 def ratsimp(expr) -> Any:
     """
     Put an expression over a common denominator, cancel and reduce.

@@ -10,6 +10,14 @@ This module contains functions to:
 
     - solve a system of Non Linear Equations with N variables and M equations
 """
+from typing import Any
+
+from sympy.core.basic import Basic
+from sympy.matrices import Matrix
+from sympy.sets.conditionset import ConditionSet
+from sympy.sets.sets import Complement, FiniteSet, Intersection, Set, Union
+
+
 class NonlinearError(ValueError):
     """Raised when unexpectedly encountering nonlinear equations"""
     ...

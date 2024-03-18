@@ -1,4 +1,7 @@
 """Solvers of systems of polynomial equations. """
+from typing import Any
+
+
 class SolveFailed(Exception):
     """Raised when solver's conditions were not met. """
     ...

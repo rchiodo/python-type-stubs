@@ -5,6 +5,10 @@ This module implements classes for representing homomorphisms of rings and
 their modules. Instead of instantiating the classes directly, you should use
 the function ``homomorphism(from, to, matrix)`` to create homomorphism objects.
 """
+from types import NotImplementedType
+from typing import Self
+
+
 class ModuleHomomorphism:
     """
     Abstract base class for module homomoprhisms. Do not instantiate.

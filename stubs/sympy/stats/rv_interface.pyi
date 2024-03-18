@@ -1,4 +1,19 @@
+from typing import Any
+
+from sympy import Equality, Integral, Piecewise
+from sympy.concrete.summations import Sum
+from sympy.core.basic import Basic
+from sympy.core.function import UndefinedFunction
+from sympy.core.mul import Mul
+from sympy.core.power import Pow
+from sympy.core.relational import Ne, Relational
+from sympy.series.order import Order
+from sympy.sets.sets import FiniteSet, Set
+from sympy.stats.symbolic_multivariate_probability import CrossCovarianceMatrix, ExpectationMatrix, VarianceMatrix
+from sympy.stats.symbolic_probability import CentralMoment, Covariance, Expectation, Moment, Variance
+
 __all__ = ['P', 'E', 'H', 'density', 'where', 'given', 'sample', 'cdf', 'characteristic_function', 'pspace', 'sample_iter', 'variance', 'std', 'skewness', 'kurtosis', 'covariance', 'dependent', 'entropy', 'median', 'independent', 'random_symbols', 'correlation', 'factorial_moment', 'moment', 'cmoment', 'sampling_density', 'moment_generating_function', 'smoment', 'quantile', 'sample_stochastic_process']
+
 def moment(X, n, c=..., condition=..., *, evaluate=..., **kwargs) -> Any | Moment:
     """
     Return the nth moment of a random expression about c.

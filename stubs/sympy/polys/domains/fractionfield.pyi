@@ -1,5 +1,7 @@
+from typing import Any
 from sympy.polys.domains.compositedomain import CompositeDomain
 from sympy.polys.domains.field import Field
+from sympy.polys.fields import FracElement
 from sympy.utilities import public
 
 """Implementation of :class:`FractionField` class. """

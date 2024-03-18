@@ -1,3 +1,6 @@
+from typing import Any, Generator
+
+
 def is_valid(x) -> bool:
     """Check if a floating point number is valid"""
     ...

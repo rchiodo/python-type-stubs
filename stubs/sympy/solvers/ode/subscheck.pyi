@@ -1,3 +1,6 @@
+from typing import Any, Literal
+
+
 def sub_func_doit(eq, func, new):
     r"""
     When replacing the func with something else, we usually want the

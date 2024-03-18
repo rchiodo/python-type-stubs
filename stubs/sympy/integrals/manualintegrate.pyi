@@ -1,11 +1,14 @@
-from typing import Callable, NamedTuple, Sequence, Type
+from typing import Any, Callable, NamedTuple, Sequence, Type
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from sympy.core.cache import cacheit
 from sympy.core.expr import Expr
+from sympy.core.function import Derivative, UndefinedFunction
 from sympy.core.relational import Boolean
-from sympy.core.symbol import Symbol
+from sympy.core.symbol import Symbol, Wild
 from sympy.functions.elementary.exponential import exp
+from sympy.functions.elementary.piecewise import Piecewise
+from sympy.tensor.array.array_derivatives import ArrayDerivative
 
 """Integration method that emulates by-hand techniques.
 

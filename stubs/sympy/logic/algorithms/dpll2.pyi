@@ -8,6 +8,9 @@ Features:
 References:
   - https://en.wikipedia.org/wiki/DPLL_algorithm
 """
+from typing import Any, Generator, Literal
+
+
 def dpll_satisfiable(expr, all_models=..., use_lra_theory=...) -> Generator[bool, None, None] | Generator[Any | Literal[False], Any, None] | dict[Any, Any] | Literal[False]:
     """
     Check satisfiability of a propositional sentence.

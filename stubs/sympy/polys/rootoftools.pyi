@@ -1,4 +1,7 @@
+from typing import Any, Literal, Self
 from sympy.core import Expr
+from sympy.core.numbers import Integer
+from sympy.series.order import Order
 from sympy.utilities import public
 
 """Implementation of RootOf class and related tools. """

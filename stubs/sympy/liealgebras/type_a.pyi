@@ -1,3 +1,4 @@
+from typing import Any, Self
 from sympy.liealgebras.cartan_type import Standard_Cartan
 
 class TypeA(Standard_Cartan):

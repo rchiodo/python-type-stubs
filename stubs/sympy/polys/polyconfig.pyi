@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+from typing import Any, Generator
 
 """Configuration utilities for polynomial manipulation algorithms. """
 _default_config = ...

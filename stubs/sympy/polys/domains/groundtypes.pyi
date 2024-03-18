@@ -1,6 +1,6 @@
 import builtins
+from typing import Any
 from sympy.external.gmpy import GROUND_TYPES
-from gmpy2 import denom as gmpy_denom, gcd as gmpy_gcd, gcdext as gmpy_gcdex, lcm as gmpy_lcm, mpq as GMPYRational, mpz as GMPYInteger, numer as gmpy_numer, qdiv as gmpy_qdiv
 
 """Ground types for various mathematical domains in SymPy. """
 PythonInteger = builtins.int

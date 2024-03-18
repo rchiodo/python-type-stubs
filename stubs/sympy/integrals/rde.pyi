@@ -20,6 +20,11 @@ k[t].
 See Chapter 6 of "Symbolic Integration I: Transcendental Functions" by
 Manuel Bronstein.  See also the docstring of risch.py.
 """
+from typing import Any, Literal
+
+from sympy.polys.polymatrix import PolyMatrix
+
+
 def order_at(a, p, t) -> Literal[0]:
     """
     Computes the order of a at p, with respect to t.

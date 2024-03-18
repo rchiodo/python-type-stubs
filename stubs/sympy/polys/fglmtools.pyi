@@ -1,4 +1,7 @@
 """Implementation of matrix FGLM Groebner basis conversion algorithm. """
+from typing import Any
+
+
 def matrix_fglm(F, ring, O_to) -> list[Any]:
     """
     Converts the reduced Groebner basis ``F`` of a zero-dimensional

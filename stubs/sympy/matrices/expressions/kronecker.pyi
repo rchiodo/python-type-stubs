@@ -1,4 +1,10 @@
+from types import NotImplementedType
+from typing import Any, Self
+from sympy.matrices.expressions.matadd import MatAdd
 from sympy.matrices.expressions.matexpr import MatrixExpr
+from sympy.matrices.expressions.special import GenericIdentity, GenericZeroMatrix, Identity
+from sympy.matrices.immutable import ImmutableDenseMatrix
+from sympy.series.order import Order
 
 """Implementation of the Kronecker product"""
 def kronecker_product(*matrices) -> Any | NotImplementedType | GenericIdentity | Order | object | Identity:

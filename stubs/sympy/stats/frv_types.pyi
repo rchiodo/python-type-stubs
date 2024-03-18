@@ -1,5 +1,11 @@
+from typing import Any
+from sympy import Basic, FiniteSet, Intersection, Piecewise
 from sympy.core.cache import cacheit
+from sympy.core.function import Lambda
+from sympy.core.numbers import Integer, Rational
+from sympy.sets.sets import Complement, Union
 from sympy.stats.frv import SingleFiniteDistribution
+from sympy.stats.rv import Density, RandomSymbol
 
 """
 Finite Discrete Random Variables - Prebuilt variable types

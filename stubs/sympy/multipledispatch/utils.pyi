@@ -1,3 +1,6 @@
+from typing import Any
+
+
 def expand_tuples(L) -> list[tuple[()]] | list[Any]:
     """
     >>> from sympy.multipledispatch.utils import expand_tuples

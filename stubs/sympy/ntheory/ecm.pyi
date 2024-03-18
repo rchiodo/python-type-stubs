@@ -1,3 +1,6 @@
+from typing import Any, Self
+
+
 class Point:
     """Montgomery form of Points in an elliptic curve.
     In this form, the addition and doubling of points

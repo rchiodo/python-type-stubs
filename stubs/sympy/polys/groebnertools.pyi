@@ -1,4 +1,7 @@
 """Groebner bases algorithms. """
+from typing import Any, Literal
+
+
 def groebner(seq, ring, method=...) -> list[Any]:
     """
     Computes Groebner basis for a set of polynomials in `K[X]`.

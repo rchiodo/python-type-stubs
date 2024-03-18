@@ -1,4 +1,7 @@
 """Euclidean algorithms, GCDs, LCMs and polynomial remainder sequences. """
+from typing import Any
+
+
 def dup_half_gcdex(f, g, K) -> tuple[list[Any] | Any, Any | list[Any]]:
     """
     Half extended Euclidean algorithm in `F[x]`.

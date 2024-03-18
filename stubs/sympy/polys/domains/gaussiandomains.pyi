@@ -1,3 +1,5 @@
+from types import NotImplementedType
+from typing import Any, Literal, LiteralString, Self
 from sympy.polys.domains.integerring import ZZ
 from sympy.polys.domains.rationalfield import QQ
 from sympy.polys.domains.domain import Domain
@@ -539,3 +541,5 @@ class GaussianRationalField(GaussianDomain, Field):
     
 
 
+QQ_I = ...
+ZZ_I = ...

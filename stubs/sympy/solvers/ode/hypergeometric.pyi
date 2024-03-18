@@ -22,6 +22,11 @@ References
        linear ODEs, (2004).
        https://arxiv.org/abs/math-ph/0402063
 '''
+from typing import Any, Literal
+
+from sympy.core.relational import Eq, Ne, Relational
+
+
 def match_2nd_hypergeometric(eq, func) -> list[Any]:
     ...
 

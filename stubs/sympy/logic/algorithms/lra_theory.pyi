@@ -113,6 +113,12 @@ References
        A Fast Linear-Arithmetic Solver for DPLL(T)
        https://link.springer.com/chapter/10.1007/11817963_11
 """
+from ast import Eq
+from typing import Any, Literal
+
+from sympy.core.relational import Ne, Relational
+
+
 class UnhandledInput(Exception):
     """
     Raised while creating an LRASolver if non-linearity

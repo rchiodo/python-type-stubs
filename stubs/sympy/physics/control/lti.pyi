@@ -1,6 +1,9 @@
-from typing import Type
+from types import NotImplementedType
+from typing import Any, Callable, Self, Type
 from sympy.core.basic import Basic
 from sympy.core.evalf import EvalfMixin
+from sympy.core.power import Pow
+from sympy.series.order import Order
 
 __all__ = ['TransferFunction', 'Series', 'MIMOSeries', 'Parallel', 'MIMOParallel', 'Feedback', 'MIMOFeedback', 'TransferFunctionMatrix', 'StateSpace', 'gbt', 'bilinear', 'forward_diff', 'backward_diff', 'phase_margin', 'gain_margin']
 def gbt(tf, sample_per, alpha) -> tuple[list[Any], list[Any]]:
@@ -268,6 +271,11 @@ class MIMOLinearTimeInvariant(LinearTimeInvariant):
     """A common class for all the MIMO Linear Time-Invariant Dynamical Systems."""
     _is_SISO = ...
 
+def _check_other_SISO(func)-> Callable[..., NotImplementedType | Any]:
+    ...
+
+def _check_other_MIMO(func)-> Callable[..., NotImplementedType | Any]:
+    ...
 
 class TransferFunction(SISOLinearTimeInvariant):
     r"""

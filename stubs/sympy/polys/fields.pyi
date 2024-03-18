@@ -1,6 +1,8 @@
-from typing import Any
+from types import NotImplementedType
+from typing import Any, Self
 from sympy.core.sympify import CantSympify
 from sympy.polys.domains.domainelement import DomainElement
+from sympy.polys.rings import PolyElement, PolyRing
 from sympy.printing.defaults import DefaultPrinting
 from sympy.utilities import public
 

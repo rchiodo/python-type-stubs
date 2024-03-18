@@ -1,3 +1,4 @@
+from typing import Self
 from sympy.utilities import public
 
 """Definitions of common exceptions for `polys` module. """

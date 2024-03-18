@@ -1,3 +1,5 @@
+from types import NotImplementedType
+from typing import Any, Generator, LiteralString
 from sympy.polys.polyutils import IntegerPowerable
 
 """Computations with ideals of polynomial rings."""

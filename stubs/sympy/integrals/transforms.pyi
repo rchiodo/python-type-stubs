@@ -1,6 +1,12 @@
+from typing import Any, Literal
+from sympy.core.basic import Basic
+from sympy.core.logic import And
+from sympy.core.relational import Equality, Ne, Relational
+from sympy.integrals.integrals import Integral
 import sympy.integrals.laplace as _laplace
-from sympy.core.function import Function
+from sympy.core.function import Function, UndefinedFunction
 from sympy.functions.elementary.trigonometric import cos, sin
+from sympy.series.order import Order
 
 """ Integral Transforms """
 class IntegralTransformError(NotImplementedError):

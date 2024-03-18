@@ -1,5 +1,10 @@
+from typing import Any
+from sympy.core.basic import Basic
+from sympy.matrices.immutable import ImmutableDenseMatrix
+from sympy.series.order import Order
 from sympy.utilities.decorator import doctest_depends_on
 from sympy.matrices.repmatrix import MutableRepMatrix, RepMatrix
+from numpy import ndarray as NDArray
 
 class DenseMatrix(RepMatrix):
     """Matrix implementation based on DomainMatrix as the internal representation"""
@@ -58,7 +63,7 @@ class MutableDenseMatrix(DenseMatrix, MutableRepMatrix):
 
 
 Matrix = MutableMatrix = MutableDenseMatrix
-def list2numpy(l, dtype=...) -> NDArray[Any]:
+def list2numpy(l, dtype=...) -> NDArray[Any, Any]:
     """Converts Python list of SymPy expressions to a NumPy array.
 
     See Also
@@ -68,7 +73,7 @@ def list2numpy(l, dtype=...) -> NDArray[Any]:
     """
     ...
 
-def matrix2numpy(m, dtype=...) -> NDArray[Any]:
+def matrix2numpy(m, dtype=...) -> NDArray[Any, Any]:
     """Converts SymPy's matrix to a NumPy array.
 
     See Also
@@ -500,7 +505,7 @@ def rot_ccw_axis1(theta):
     ...
 
 @doctest_depends_on(modules=('numpy', ))
-def symarray(prefix, shape, **kwargs) -> NDArray[Any]:
+def symarray(prefix, shape, **kwargs) -> NDArray[Any, Any]:
     r"""Create a numpy ndarray of symbols (as an object array).
 
     The created symbols are named ``prefix_i1_i2_``...  You should thus provide a

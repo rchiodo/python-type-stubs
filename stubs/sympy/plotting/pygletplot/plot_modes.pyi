@@ -1,3 +1,4 @@
+from typing import Callable
 from sympy.plotting.pygletplot.plot_curve import PlotCurve
 from sympy.plotting.pygletplot.plot_surface import PlotSurface
 

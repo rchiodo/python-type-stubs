@@ -10,7 +10,7 @@ from sympy.solvers.inequalities import reduce_abs_inequalities, reduce_abs_inequ
 from sympy.solvers.decompogen import decompogen
 from sympy.solvers.solveset import linear_eq_to_matrix, linsolve, nonlinsolve, solveset, substitution
 from sympy.solvers.simplex import linprog, lpmax, lpmin
-from sympy.solvers..core.singleton import S
+from sympy.core.singleton import S
 
 """A module for solving all kinds of equations.
 

@@ -21,6 +21,13 @@ Simplicity of code takes much greater importance than performance. Do not use it
 if you care at all about performance. A new backend instance is initialized
 every time you call ``show()`` and the old one is left to the garbage collector.
 """
+from types import NotImplementedType
+from typing import Any, Tuple
+from sympy.plotting.backends.base_backend import Plot
+from sympy.plotting.backends.matplotlibbackend.matplotlib import MatplotlibBackend
+from sympy.plotting.backends.textbackend.text import TextBackend
+
+
 def plot_factory(*args, **kwargs) -> MatplotlibBackend | TextBackend | Plot:
     ...
 

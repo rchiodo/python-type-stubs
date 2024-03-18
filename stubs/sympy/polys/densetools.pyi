@@ -1,4 +1,7 @@
 """Advanced tools for dense recursive polynomials in ``K[x]`` or ``K[X]``. """
+from typing import Any
+
+
 def dup_integrate(f, m, K):
     """
     Computes the indefinite integral of ``f`` in ``K[x]``.

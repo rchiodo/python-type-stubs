@@ -60,6 +60,9 @@ Here is a simple 1-D system: minimize `x` given that ``x >= 1``.
     sympy.solvers.simplex.InfeasibleLPError:
     Inconsistent/False constraint
 """
+from typing import Any
+
+
 class UnboundedLPError(Exception):
     """
     A linear programing problem is said to be unbounded if its objective

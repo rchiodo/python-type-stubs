@@ -1,3 +1,7 @@
+from ctypes import Array, c_float, c_int
+from typing import Any, Literal
+
+
 def get_model_matrix(array_type=..., glGetMethod=...) -> Array[c_float]:
     """
     Returns the current modelview matrix.

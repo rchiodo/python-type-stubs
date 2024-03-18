@@ -17,6 +17,13 @@ ODE Patterns, pp. 7 - pp. 12
 - `bivariate` from Lie Groups and Differential Equations pp. 327 - pp. 329
 
 """
+from typing import Any
+
+from sympy.core.basic import Basic
+from sympy.core.function import UndefinedFunction
+from sympy.core.symbol import Symbol
+
+
 lie_heuristics = ...
 def infinitesimals(eq, func=..., order=..., hint=..., match=...) -> list[Any] | Any:
     r"""

@@ -1,7 +1,22 @@
-from sympy.core.decorators import call_highest_priority
+from typing import Any, Callable, Literal, Self
+from sympy.core.basic import Basic
+from sympy.core.decorators import _sympifyit, call_highest_priority
 from sympy.core.expr import Expr
+from sympy.core.function import UndefinedFunction
 from sympy.core.logic import FuzzyBool
+from sympy.matrices import Matrix
+from sympy.matrices.expressions.applyfunc import ElementwiseApplyFunction
+from sympy.matrices.expressions.determinant import Determinant
+from sympy.matrices.expressions.inverse import Inverse
+from sympy.matrices.expressions.matadd import MatAdd
+from sympy.matrices.expressions.matmul import MatMul
+from sympy.matrices.expressions.matpow import MatPow
+from sympy.matrices.expressions.slice import MatrixSlice
+from sympy.matrices.expressions.special import GenericIdentity, GenericZeroMatrix, Identity
+from sympy.matrices.expressions.transpose import Transpose
+from sympy.matrices.immutable import ImmutableDenseMatrix
 from sympy.matrices.kind import MatrixKind
+from sympy.series.order import Order
 
 class MatrixExpr(Expr):
     """Superclass for Matrix Expressions

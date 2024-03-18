@@ -1,9 +1,10 @@
-from typing import ClassVar, Iterator
+from typing import Any, ClassVar, Iterator
 from sympy.core.cache import cached_property
 from sympy.core.expr import Expr
 from sympy.core.function import AppliedUndef, Function
 from sympy.core.relational import Equality
 from sympy.core.symbol import Symbol
+from sympy.series.order import Order
 
 class ODEMatchError(NotImplementedError):
     """Raised if a SingleODESolver is asked to solve an ODE it does not match"""

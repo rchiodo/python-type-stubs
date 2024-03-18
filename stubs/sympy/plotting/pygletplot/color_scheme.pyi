@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class ColorGradient:
     colors = ...
     intervals = ...

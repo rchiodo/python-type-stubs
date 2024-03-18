@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, LiteralString
 from sympy.printing.printer import Printer, print_function
 
 """

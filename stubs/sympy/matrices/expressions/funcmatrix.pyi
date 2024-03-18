@@ -1,3 +1,5 @@
+from typing import Self
+from sympy.core.basic import Basic
 from sympy.matrices.expressions.matexpr import MatrixExpr
 
 class FunctionMatrix(MatrixExpr):

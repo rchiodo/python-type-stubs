@@ -1,4 +1,9 @@
 """Tools for manipulation of expressions using paths. """
+from typing import Any, Self
+
+from sympy.core.basic import Basic
+
+
 class EPath:
     r"""
     Manipulate expressions using paths.

@@ -1,6 +1,21 @@
+from functools import _Wrapped
+from types import NotImplementedType
+from typing import Any, Callable, Iterator, Literal, Self, Tuple
+from sympy.combinatorics.galois import S1TransitiveSubgroups, S2TransitiveSubgroups, S3TransitiveSubgroups
+from sympy.combinatorics.perm_groups import PermutationGroup
+from sympy.core.add import Add
 from sympy.core.basic import Basic
 from sympy.core.decorators import _sympifyit
+from sympy.core.expr import Expr
+from sympy.core.function import Derivative
+from sympy.core.mul import Mul
+from sympy.core.numbers import Integer
+from sympy.core.relational import Equality, Ne, Relational
+from sympy.series.order import Order
 from sympy.utilities import public
+
+def _polifyit(func)-> _Wrapped[..., Any, ..., Any]:
+    ...
 
 """User-friendly public interface to polynomial functions. """
 @public

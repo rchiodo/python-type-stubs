@@ -1,3 +1,8 @@
+from typing import Any
+
+from sympy.core.numbers import Integer
+
+
 def egyptian_fraction(r, algorithm=...) -> list[Any | Integer] | list[Any]:
     """
     Return the list of denominators of an Egyptian fraction

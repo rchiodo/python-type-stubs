@@ -1,3 +1,6 @@
+from sympy.plotting.backends.base_backend import Plot
+from sympy.plotting.backends.matplotlibbackend.matplotlib import MatplotlibBackend
+from sympy.plotting.backends.textbackend.text import TextBackend
 from sympy.utilities.decorator import doctest_depends_on
 
 """Implicit plotting module for SymPy.

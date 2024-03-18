@@ -1,9 +1,10 @@
 from sympy.utilities.decorator import doctest_depends_on
+from sympy.plotting.pygletplot.plot import PygletPlot as Plot
 
 """Plotting module that can plot 2D and 3D functions
 """
 @doctest_depends_on(modules=('pyglet', ))
-def PygletPlot(*args, **kwargs) -> PygletPlot:
+def PygletPlot(*args, **kwargs) -> Plot:
     """
 
     Plot Examples

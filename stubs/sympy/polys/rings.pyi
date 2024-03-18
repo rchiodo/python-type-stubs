@@ -1,8 +1,11 @@
-from typing import Any
+from types import NotImplementedType
+from typing import Any, Iterator, Literal, LiteralString, Self
 from sympy.core.sympify import CantSympify
 from sympy.polys.compatibility import IPolys
 from sympy.polys.domains.domainelement import DomainElement
+from sympy.polys.fields import FracField
 from sympy.printing.defaults import DefaultPrinting
+from sympy.series.order import Order
 from sympy.utilities import public
 
 """Sparse polynomial rings. """

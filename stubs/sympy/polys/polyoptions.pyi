@@ -1,3 +1,8 @@
+from typing import Any, Callable, Generator, Literal, NoReturn, Self
+from sympy.core.basic import Basic
+from sympy.core.symbol import Symbol
+from sympy.polys.domains.gaussiandomains import GaussianIntegerRing, GaussianRationalField
+from sympy.polys.orderings import LexOrder
 from sympy.utilities import public
 
 """Options manager for :class:`~.Poly` and public API functions. """

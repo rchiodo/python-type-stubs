@@ -1,3 +1,4 @@
+from typing import Self
 from sympy.core import Expr
 from sympy.core.decorators import _sympifyit, call_highest_priority
 

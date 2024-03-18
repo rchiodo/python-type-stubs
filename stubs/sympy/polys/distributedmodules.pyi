@@ -25,6 +25,9 @@ distributedpolys.py) is never needed in this code.
 The main reference for this file is [SCA],
 "A Singular Introduction to Commutative Algebra".
 """
+from typing import Any
+
+
 def sdm_monomial_mul(M, X) -> tuple[Any, *tuple[Any, ...]]:
     """
     Multiply tuple ``X`` representing a monomial of `K[X]` into the tuple

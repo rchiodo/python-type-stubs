@@ -1,4 +1,8 @@
 """ The module contains implemented functions for interval arithmetic."""
+from types import NotImplementedType
+from sympy.plotting.intervalmath.interval_arithmetic import interval
+
+
 def Abs(x) -> interval:
     ...
 

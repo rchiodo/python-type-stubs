@@ -1,3 +1,4 @@
+from typing import Any
 from sympy.utilities import public, xthreaded
 
 """Algorithms for partial fraction decomposition of rational functions. """

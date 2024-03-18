@@ -1,3 +1,6 @@
+from typing import Self
+
+
 _show = ...
 def unset_show() -> None:
     """

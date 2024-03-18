@@ -1,3 +1,7 @@
+from types import NotImplementedType
+from typing import Any, Literal, Self
+from sympy.polys.matrices.domainmatrix import DomainMatrix
+from sympy.polys.polyclasses import ANP
 from sympy.polys.polyutils import IntegerPowerable
 
 r"""Modules in number fields.

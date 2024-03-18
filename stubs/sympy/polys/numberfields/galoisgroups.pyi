@@ -1,3 +1,4 @@
+from typing import Any
 from sympy.polys.numberfields.galois_resolvents import GaloisGroupException
 from sympy.utilities import public
 

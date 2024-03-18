@@ -1,4 +1,7 @@
+from typing import Self
+from sympy.polys.agca.ideals import ModuleImplementedIdeal
 from sympy.polys.domains.domain import Domain
+from sympy.polys.domains.quotientring import QuotientRing
 from sympy.utilities import public
 
 """Implementation of :class:`Ring` class. """

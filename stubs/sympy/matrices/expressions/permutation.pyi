@@ -1,4 +1,7 @@
+from typing import Any, Self
+from sympy.core.basic import Basic
 from sympy.matrices.expressions.matexpr import MatrixExpr
+from sympy.matrices.expressions.special import Identity, OneMatrix, ZeroMatrix
 
 class PermutationMatrix(MatrixExpr):
     """A Permutation Matrix

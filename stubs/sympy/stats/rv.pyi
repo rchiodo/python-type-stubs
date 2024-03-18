@@ -1,7 +1,22 @@
 from functools import singledispatch
+from typing import Any, Generator, Literal, Self
+from sympy import Equality, FiniteSet, Integral, Ne, Piecewise, ProductSet, Sum
 from sympy.core.basic import Basic
 from sympy.core.expr import Expr
+from sympy.core.function import Lambda
+from sympy.core.logic import And
+from sympy.core.relational import Relational
 from sympy.matrices.expressions.matexpr import MatrixSymbol
+from sympy.series.order import Order
+from sympy.stats.compound_rv import CompoundPSpace
+from sympy.stats.crv import ContinuousPSpace, ProductContinuousDomain
+from sympy.stats.drv import DiscretePSpace, ProductDiscreteDomain
+from sympy.stats.frv import ConditionalFiniteDomain, FiniteDensity, FinitePSpace, ProductFiniteDomain, ProductFinitePSpace
+from sympy.stats.frv_types import BernoulliDistribution
+from sympy.stats.joint_rv import JointRandomSymbol
+from sympy.stats.stochastic_process import StochasticPSpace
+from sympy.stats.symbolic_multivariate_probability import ExpectationMatrix
+from sympy.stats.symbolic_probability import Expectation, Probability
 from sympy.utilities.decorator import doctest_depends_on
 
 """
@@ -20,7 +35,7 @@ sympy.stats.rv_interface
 """
 x = ...
 @singledispatch
-def is_random(x) -> Literal[False]:
+def is_random(x) -> bool:
     ...
 
 @is_random.register(Basic)

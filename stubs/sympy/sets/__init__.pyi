@@ -4,7 +4,7 @@ from sympy.sets.contains import Contains
 from sympy.sets.conditionset import ConditionSet
 from sympy.sets.ordinals import OmegaPower, Ordinal, ord0
 from sympy.sets.powerset import PowerSet
-from sympy.sets..core.singleton import S
+from sympy.core.singleton import S
 from sympy.sets.handlers.comparison import _eval_is_eq
 
 Complexes = ...

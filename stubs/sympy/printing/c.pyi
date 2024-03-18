@@ -1,5 +1,7 @@
 from typing import Any
 from sympy.codegen.ast import Type
+from sympy.core.function import UndefinedFunction
+from sympy.core.power import Pow
 from sympy.printing.codeprinter import CodePrinter
 
 """

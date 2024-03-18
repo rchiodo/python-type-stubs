@@ -1,3 +1,4 @@
+from typing import Any, Literal
 from sympy.polys.domains.domainelement import DomainElement
 from sympy.utilities import public
 from mpmath.ctx_mp_python import PythonMPContext, _mpc, _mpf
@@ -29,7 +30,7 @@ class MPContext(PythonMPContext):
     def __init__(ctx, prec=..., dps=..., tol=..., real=...) -> None:
         ...
     
-    def make_tol(ctx) -> mpf:
+    def make_tol(ctx) -> _mpf:
         ...
     
     def to_rational(ctx, s, limit=...) -> tuple[int, Any | Literal[1]] | tuple[Any, Any]:

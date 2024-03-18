@@ -1,3 +1,6 @@
+from typing import Any
+
+
 def symmetric_residue(a, m):
     """Return the residual mod m such that it is within half of the modulus.
 

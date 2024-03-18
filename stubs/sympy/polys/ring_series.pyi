@@ -40,6 +40,9 @@ To make a function work with rs_series you need to do two things::
 Look at rs_sin and rs_series for further reference.
 
 """
+from typing import Any, Literal
+
+
 def rs_trunc(p1, x, prec):
     """
     Truncate the series in the ``x`` variable with precision ``prec``,

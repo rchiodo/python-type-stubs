@@ -1,3 +1,5 @@
+from types import NotImplementedType
+from typing import Any, Literal, Self
 from sympy.polys.domains.domain import Domain
 from sympy.polys.domains.domainelement import DomainElement
 from sympy.printing.defaults import DefaultPrinting

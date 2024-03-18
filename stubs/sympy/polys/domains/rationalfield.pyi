@@ -1,4 +1,8 @@
+from types import NotImplementedType
+from typing import Any, Literal, Self
+from sympy.core.numbers import Integer, Rational
 from sympy.external.gmpy import MPQ
+from sympy.external.pythonmpq import PythonMPQ
 from sympy.polys.domains.characteristiczero import CharacteristicZero
 from sympy.polys.domains.field import Field
 from sympy.polys.domains.simpledomain import SimpleDomain
@@ -28,8 +32,8 @@ class RationalField(Field, CharacteristicZero, SimpleDomain):
     has_assoc_Ring = ...
     has_assoc_Field = ...
     dtype = MPQ
-    zero = dtype(0)
-    one = dtype(1)
+    zero = ...
+    one = ...
     tp = type(one)
     def __init__(self) -> None:
         ...
@@ -130,11 +134,11 @@ class RationalField(Field, CharacteristicZero, SimpleDomain):
         """Quotient of ``a`` and ``b``, implies ``__truediv__``. """
         ...
     
-    def rem(self, a, b) -> dtype:
+    def rem(self, a, b) -> Any:
         """Remainder of ``a`` and ``b``, implies nothing.  """
         ...
     
-    def div(self, a, b) -> tuple[NotImplementedType | Self, dtype]:
+    def div(self, a, b) -> tuple[NotImplementedType | Self, Any]:
         """Division of ``a`` and ``b``, implies ``__truediv__``. """
         ...
     

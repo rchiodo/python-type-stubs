@@ -195,6 +195,11 @@ Step 13 : For each solution in ``sol``, apply an inverse transformation,
 so that the solutions of the original equation are found using the
 solutions of the equation in its normal form.
 """
+from typing import Any, Literal
+
+from sympy.core.relational import Eq, Ne, Relational
+
+
 def riccati_normal(w, x, b1, b2):
     """
     Given a solution `w(x)` to the equation

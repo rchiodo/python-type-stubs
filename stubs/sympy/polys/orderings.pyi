@@ -1,5 +1,8 @@
 """Definitions of monomial orderings. """
 __all__ = ["lex", "grlex", "grevlex", "ilex", "igrlex", "igrevlex"]
+from typing import Any, Callable
+
+
 class MonomialOrder:
     """Base class for monomial orderings. """
     alias: str | None = ...

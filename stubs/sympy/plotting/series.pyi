@@ -1,3 +1,6 @@
+from typing import Any, Literal, Tuple
+from sympy.core.relational import Equality, GreaterThan, LessThan, Ne, Relational
+from sympy.logic.boolalg import BooleanFunction
 from sympy.printing.pycode import PythonCodePrinter
 
 class IntervalMathPrinter(PythonCodePrinter):

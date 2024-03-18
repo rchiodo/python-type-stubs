@@ -1,3 +1,9 @@
+from typing import Any
+
+from sympy.core.symbol import Dummy
+from sympy.series.order import Order
+
+
 def bivariate_type(f, x, y, *, first=...) -> tuple[Any, Any, Any] | tuple[Any, Any | Order, Dummy] | tuple[Any, Any, Dummy] | None:
     """Given an expression, f, 3 tests will be done to see what type
     of composite bivariate it might be, options for u(x, y) are::

@@ -1,3 +1,7 @@
+from collections import defaultdict
+from typing import Any
+
+
 def digits(n, b=..., digits=...) -> list[Any]:
     """
     Return a list of the digits of ``n`` in base ``b``. The first

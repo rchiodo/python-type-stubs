@@ -1,3 +1,4 @@
+from functools import _Wrapped
 from typing import Any
 from sympy.printing.str import StrPrinter
 
@@ -6,7 +7,7 @@ class requires:
     def __init__(self, **kwargs) -> None:
         ...
     
-    def __call__(self, method) -> _Wrapped[Callable[..., Any], Any, Callable[..., Any], Any]:
+    def __call__(self, method) -> _Wrapped[..., Any, ..., Any]:
         ...
     
 

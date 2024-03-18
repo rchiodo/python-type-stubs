@@ -1,4 +1,7 @@
 """Heuristic polynomial GCD algorithm (HEUGCD). """
+from typing import Any
+
+
 HEU_GCD_MAX = ...
 def heugcd(f, g) -> tuple[Any, Any, Any]:
     """

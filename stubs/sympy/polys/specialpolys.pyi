@@ -1,3 +1,5 @@
+from typing import Any
+from sympy.series.order import Order
 from sympy.utilities import public
 
 """Functions for generating interesting polynomials, e.g. for benchmarking. """

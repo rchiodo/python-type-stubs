@@ -1,5 +1,13 @@
-from sympy.core.function import Function
+from typing import Any, Generator, Self
+from sympy.core.basic import Basic
+from sympy.core.function import Function, UndefinedFunction
+from sympy.core.numbers import Float, Integer, Rational
+from sympy.core.relational import Equality, Ne, Relational
+from sympy.functions.elementary.piecewise import Piecewise
+from sympy.series.order import Order
+from sympy.series.sequences import SeqFormula, SeqPer
 from sympy.series.series_class import SeriesBase
+from sympy.sets.sets import FiniteSet, Interval
 
 """Formal Power Series"""
 def rational_algorithm(f, x, k, order=..., full=...) -> tuple[Any, Any, int] | None:

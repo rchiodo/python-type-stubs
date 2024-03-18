@@ -1,3 +1,4 @@
+from typing import Literal
 from sympy.sets.sets import FiniteSet, Interval, ProductSet, Set, Union
 from sympy.sets.fancysets import Complexes, Range, Rationals, Reals
 

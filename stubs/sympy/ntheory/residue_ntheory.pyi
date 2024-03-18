@@ -1,3 +1,5 @@
+from typing import Any, Generator
+from sympy.core.function import UndefinedFunction
 from sympy.utilities.decorator import deprecated
 
 def n_order(a, n) -> int:

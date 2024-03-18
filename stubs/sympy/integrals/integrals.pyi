@@ -1,7 +1,9 @@
-from typing import Tuple as tTuple
+from typing import Any, Self, Tuple as tTuple
 from sympy.concrete.expr_with_limits import AddWithLimits
+from sympy.core.basic import Basic
 from sympy.core.containers import Tuple
 from sympy.core.expr import Expr
+from sympy.core.relational import Equality, Ne, Relational
 from sympy.tensor.functions import shape
 
 class Integral(AddWithLimits):

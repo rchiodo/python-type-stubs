@@ -32,6 +32,11 @@ more information on each (run help(pde)):
     variable coefficients.
 
 """
+from typing import Any
+
+from sympy.core.relational import Eq, Ne, Relational
+
+
 allhints = ...
 def pdsolve(eq, func=..., hint=..., dict=..., solvefun=..., **kwargs) -> dict[Any, Any] | Any:
     """

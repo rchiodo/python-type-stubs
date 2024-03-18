@@ -1,4 +1,9 @@
+from typing import Any, Generator, Literal, Self
+from sympy.core.basic import Basic
+from sympy.series.order import Order
+from sympy.series.sequences import SeqFormula
 from sympy.series.series_class import SeriesBase
+from sympy.sets.sets import FiniteSet, Interval
 
 """Fourier Series"""
 def fourier_cos_seq(func, limits, n) -> tuple[Any, Any | SeqFormula]:

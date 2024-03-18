@@ -1,4 +1,7 @@
+from typing import Self
 from sympy.core import Expr
+from sympy.core.basic import Basic
+from sympy.core.function import UndefinedFunction
 
 def limit(e, z, z0, dir=...):
     """Computes the limit of ``e(z)`` at the point ``z0``.

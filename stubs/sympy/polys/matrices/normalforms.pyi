@@ -1,4 +1,9 @@
 '''Functions returning normal forms of matrices'''
+from typing import Any
+from sympy.polys.matrices.domainmatrix import DomainMatrix
+from sympy.polys.matrices.domainscalar import DomainScalar
+
+
 def smith_normal_form(m) -> DomainMatrix:
     '''
     Return the Smith Normal Form of a matrix `m` over the ring `domain`.

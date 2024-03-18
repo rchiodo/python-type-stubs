@@ -1,3 +1,5 @@
+from typing import Any
+from sympy.core.numbers import AlgebraicNumber
 from sympy.utilities import public
 
 r"""

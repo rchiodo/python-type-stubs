@@ -1,3 +1,7 @@
+from types import NotImplementedType
+from typing import Any, Self
+
+
 class MutablePolyDenseMatrix:
     """
     A mutable matrix of objects from poly module or to operate with them.

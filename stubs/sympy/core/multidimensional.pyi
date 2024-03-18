@@ -52,7 +52,10 @@ class vectorize:
     >>> vdiff([f(x, y, z), g(x, y, z), h(x, y, z)], [x, y, z])
     [[Derivative(f(x, y, z), x), Derivative(f(x, y, z), y), Derivative(f(x, y, z), z)], [Derivative(g(x, y, z), x), Derivative(g(x, y, z), y), Derivative(g(x, y, z), z)], [Derivative(h(x, y, z), x), Derivative(h(x, y, z), y), Derivative(h(x, y, z), z)]]
     """
-    def __call__(self, f) -> _Wrapped[..., Any, ..., list[list[Any] | Any] | Any]:
+    def __init__(self, *mdargs) -> None:
+        ...
+
+    def __call__(self, f: Any) -> _Wrapped[..., Any, ..., list[list[Any] | Any] | Any]:
         """
         Returns a wrapper for the one-dimensional function that can handle
         multidimensional arguments.

@@ -348,7 +348,7 @@ def parse_expr(s: str, local_dict: Optional[DICT] = ..., transformations: tUnion
     """
     ...
 
-def evaluateFalse(s: str) -> Expression:
+def evaluateFalse(s: str) -> ast.Expression:
     """
     Replaces operators with the SymPy equivalent and sets evaluate=False.
     """
@@ -358,16 +358,16 @@ class EvaluateFalseTransformer(ast.NodeTransformer):
     operators = ...
     functions = ...
     relational_operators = ...
-    def visit_Compare(self, node) -> Call | Compare:
+    def visit_Compare(self, node) -> ast.Call | ast.Compare:
         ...
     
     def flatten(self, args, func) -> list[Any]:
         ...
     
-    def visit_BinOp(self, node) -> Call | BinOp:
+    def visit_BinOp(self, node) -> ast.Call | ast.BinOp:
         ...
     
-    def visit_Call(self, node) -> AST:
+    def visit_Call(self, node) -> ast.AST:
         ...
     
 

@@ -1,3 +1,6 @@
+from sympy.core.basic import Basic
+
+
 def powsimp(expr, deep=..., combine=..., force=..., measure=...):
     """
     Reduce expression by combining powers with similar bases and exponents.

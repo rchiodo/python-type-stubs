@@ -1,4 +1,7 @@
 """Dense univariate polynomials with coefficients in Galois fields. """
+from typing import Any, Literal
+
+
 def gf_crt(U, M, K=...):
     """
     Chinese Remainder Theorem.

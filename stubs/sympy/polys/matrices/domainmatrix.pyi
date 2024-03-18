@@ -1,9 +1,12 @@
-from typing import Tuple as tTuple, Union as tUnion
+from types import NotImplementedType
+from typing import Any, Literal, Self, Tuple as tTuple, Union as tUnion
+from sympy.matrices.dense import MutableDenseMatrix
+from sympy.polys.matrices.domainscalar import DomainScalar
 from sympy.utilities.decorator import doctest_depends_on
-from sympy.polys.matrices..domains import Domain
+from sympy.polys.domains import Domain
 from sympy.polys.matrices.ddm import DDM
 from sympy.polys.matrices.sdm import SDM
-from sympy.polys.matrices.dfm import DFM
+from sympy.polys.matrices.dfm import DFM, DFM_dummy
 
 """
 
@@ -82,7 +85,7 @@ class DomainMatrix:
     Poly
 
     """
-    rep: tUnion[SDM, DDM, DFM]
+    rep: tUnion[SDM, DDM, Any]
     shape: tTuple[int, int]
     domain: Domain
     def __new__(cls, rows, shape, domain, *, fmt=...) -> Self:

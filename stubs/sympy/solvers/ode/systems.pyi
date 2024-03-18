@@ -1,3 +1,6 @@
+from typing import Any
+from sympy.core.relational import Eq, Ne, Relational
+from sympy.matrices import Matrix
 from sympy.solvers.solveset import NonlinearError
 
 class ODEOrderError(ValueError):

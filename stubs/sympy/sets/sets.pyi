@@ -1,12 +1,17 @@
-from typing import Any, Callable
+from types import NotImplementedType
+from typing import Any, Callable, Generator, Iterator, Literal, Self
 from sympy.core.kind import Kind
 from sympy.core.basic import Basic
 from sympy.core.decorators import sympify_method_args, sympify_return
 from sympy.core.evalf import EvalfMixin
 from sympy.core.expr import Expr
-from sympy.core.logic import FuzzyBool
+from sympy.core.logic import And, FuzzyBool, Not, Or
 from sympy.core.operations import LatticeOp
 from sympy.core.singleton import Singleton
+from sympy.logic.boolalg import Boolean, BooleanFalse, BooleanTrue, Xor
+from sympy.sets.contains import Contains
+from sympy.sets.fancysets import ImageSet
+from sympy.sets.powerset import PowerSet
 from sympy.utilities.decorator import deprecated
 
 tfn = ...
@@ -849,7 +854,7 @@ class Interval(Set):
         """Rewrite an interval in terms of inequalities and logic operators."""
         ...
     
-    def to_mpi(self, prec=...) -> ivmpf:
+    def to_mpi(self, prec=...) -> Any:
         ...
     
     @property

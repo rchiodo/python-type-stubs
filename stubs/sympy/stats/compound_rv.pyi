@@ -1,4 +1,13 @@
-from sympy.stats.rv import Distribution, NamedArgsMixin, PSpace
+from typing import Any, Self
+from sympy import Basic, Equality, Integral, Ne, Piecewise, Sum
+from sympy.core.function import Lambda
+from sympy.core.relational import Relational
+from sympy.series.order import Order
+from sympy.stats.crv import ContinuousDistribution, ContinuousPSpace, SingleContinuousDomain, SingleContinuousPSpace
+from sympy.stats.drv import DiscreteDistribution, DiscretePSpace, SingleDiscreteDomain, SingleDiscretePSpace
+from sympy.stats.frv import FiniteDensity, FinitePSpace, SingleFiniteDistribution, SingleFiniteDomain, SingleFinitePSpace
+from sympy.stats.rv import Distribution, NamedArgsMixin, PSpace, RandomSymbol
+from sympy.stats.symbolic_probability import Probability
 
 class CompoundPSpace(PSpace):
     """

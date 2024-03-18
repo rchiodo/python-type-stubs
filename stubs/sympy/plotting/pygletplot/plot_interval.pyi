@@ -1,3 +1,9 @@
+from typing import Any, Callable, Generator
+
+from sympy.core.numbers import Integer
+from sympy.core.symbol import Symbol
+
+
 class PlotInterval:
     """
     """

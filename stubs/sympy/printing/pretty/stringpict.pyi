@@ -11,6 +11,9 @@ TODO:
     - Allow left/center/right alignment options for above/below and
       top/center/bottom alignment options for left/right
 """
+from typing import Any, Self
+
+
 class stringPict:
     """An ASCII picture.
     The pictures are represented as a list of equal length strings.

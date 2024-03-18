@@ -1,4 +1,5 @@
-import flint
+from types import NotImplementedType
+from typing import Any, Callable, Literal, Never, Self
 from sympy.external.gmpy import GROUND_TYPES
 from sympy.core.sympify import CantSympify
 from sympy.polys.polyutils import PicklableWithSlots

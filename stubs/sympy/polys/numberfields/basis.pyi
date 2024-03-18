@@ -1,3 +1,5 @@
+from typing import Any
+from sympy.polys.numberfields.modules import Submodule
 from sympy.utilities.decorator import public
 
 """Computing integral bases for number fields. """

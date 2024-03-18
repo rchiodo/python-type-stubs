@@ -1,4 +1,11 @@
+from typing import Any, Literal, Self
+from sympy.core.basic import Basic
+from sympy.matrices.expressions.matadd import MatAdd
 from sympy.matrices.expressions.matexpr import MatrixExpr
+from sympy.matrices.expressions.matpow import MatPow
+from sympy.matrices.expressions.special import GenericIdentity, GenericZeroMatrix
+from sympy.matrices.immutable import ImmutableDenseMatrix
+from sympy.series.order import Order
 
 class BlockMatrix(MatrixExpr):
     """A BlockMatrix is a Matrix comprised of other matrices.

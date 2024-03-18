@@ -1,3 +1,6 @@
+from sympy.matrices import Matrix
+
+
 class TableForm:
     r"""
     Create a nice table representation of data.

@@ -1,6 +1,7 @@
 from sympy.core import Basic, Expr
 from sympy.core.numbers import Infinity, Integer, NegativeInfinity, Zero
-from sympy.sets.sets import Interval, Set
+from sympy.sets.fancysets import ImageSet
+from sympy.sets.sets import FiniteSet, Interval, Set, Union
 
 _set_pow = ...
 @_set_pow.register(Basic, Basic)

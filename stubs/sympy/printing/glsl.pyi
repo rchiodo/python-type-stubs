@@ -1,3 +1,4 @@
+from typing import Any
 from sympy.core import Basic
 from sympy.printing.codeprinter import CodePrinter
 

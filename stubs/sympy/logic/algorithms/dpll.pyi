@@ -7,6 +7,9 @@ References:
   - https://en.wikipedia.org/wiki/DPLL_algorithm
   - https://www.researchgate.net/publication/242384772_Implementations_of_the_DPLL_Algorithm
 """
+from typing import Any, Literal
+
+
 def dpll_satisfiable(expr) -> dict[Any, Any] | Literal[False]:
     """
     Check satisfiability of a propositional sentence.

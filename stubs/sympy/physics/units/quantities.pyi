@@ -1,4 +1,7 @@
-from sympy.core.expr import AtomicExpr
+from typing import Any, Self
+from sympy.core.add import Add
+from sympy.core.expr import AtomicExpr, Expr
+from sympy.physics.units.dimensions import Dimension
 
 """
 Physical quantities.

@@ -1,4 +1,7 @@
 """Square-free decomposition algorithms and related tools. """
+from typing import Any, Literal
+
+
 def dup_sqf_p(f, K) -> bool:
     """
     Return ``True`` if ``f`` is a square-free polynomial in ``K[x]``.

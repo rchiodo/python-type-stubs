@@ -1,4 +1,9 @@
 """Limits of sequences"""
+from sympy.calculus.accumulationbounds import AccumulationBounds
+from sympy.core.basic import Basic
+from sympy.series.order import Order
+
+
 def difference_delta(expr, n=..., step=...):
     """Difference Operator.
 

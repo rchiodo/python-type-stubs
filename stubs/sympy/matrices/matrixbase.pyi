@@ -1,10 +1,21 @@
+from types import NotImplementedType
+from typing import Any, Literal, Self
+from sympy.core.basic import Basic
+from sympy.core.power import Pow
 from sympy.core.symbol import Symbol
-from sympy.core.sympify import _sympify
+from sympy.functions.elementary.miscellaneous import Max, Min
+from sympy.matrices import SparseMatrix
+from sympy.matrices.expressions.blockmatrix import BlockDiagMatrix, BlockMatrix
+from sympy.matrices.expressions.permutation import PermutationMatrix
+from sympy.matrices.immutable import ImmutableDenseMatrix
 from sympy.printing.defaults import Printable
+from sympy.series.order import Order
+from sympy.tensor.array.array_derivatives import ArrayDerivative
 from sympy.utilities.iterables import NotIterable
 from sympy.core.decorators import call_highest_priority
 from sympy.core.logic import FuzzyBool
 from sympy.matrices.kind import MatrixKind
+from numpy import ndarray as NDArray
 
 class MatrixBase(Printable):
     """All common matrix operations including basic arithmetic, shaping,
@@ -2303,7 +2314,7 @@ class MatrixBase(Printable):
     def flat(self) -> list[Any]:
         ...
     
-    def __array__(self, dtype=...) -> NDArray[Any]:
+    def __array__(self, dtype=...) -> NDArray[Any, Any]:
         ...
     
     def __len__(self) -> int:

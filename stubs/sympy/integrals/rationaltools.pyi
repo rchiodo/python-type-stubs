@@ -1,4 +1,7 @@
 """This module implements tools for integrating rational functions. """
+from typing import Any
+
+
 def ratint(f, x, **flags) -> Any:
     """
     Performs indefinite integration of rational functions.

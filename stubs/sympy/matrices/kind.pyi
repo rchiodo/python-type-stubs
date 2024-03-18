@@ -1,3 +1,4 @@
+from typing import Self
 from sympy.core.kind import Kind, _NumberKind
 from sympy.core.mul import Mul
 

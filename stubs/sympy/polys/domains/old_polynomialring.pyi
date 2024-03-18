@@ -1,6 +1,9 @@
+from typing import Any, Literal, Self
+from sympy.polys.agca.modules import FreeModulePolyRing
 from sympy.polys.domains.compositedomain import CompositeDomain
 from sympy.polys.domains.ring import Ring
-from sympy.polys.polyclasses import DMF, DMP
+from sympy.polys.polyclasses import DMF, DMP, DMP_Python, DUP_Flint
+from sympy.series.order import Order
 from sympy.utilities import public
 
 """Implementation of :class:`PolynomialRing` class. """

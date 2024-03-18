@@ -1,4 +1,7 @@
 """Inference in propositional logic"""
+from typing import Any, Generator, Literal, NoReturn
+
+
 def literal_symbol(literal) -> bool:
     """
     The symbol in this literal (without the negation).

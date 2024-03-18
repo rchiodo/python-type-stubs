@@ -1,3 +1,5 @@
+from sympy.matrices import Matrix
+from sympy.matrices.dense import MutableDenseMatrix
 from sympy.utilities.decorator import deprecated
 
 """Known matrices related to physics"""

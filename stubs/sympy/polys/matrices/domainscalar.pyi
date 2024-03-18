@@ -9,6 +9,10 @@ convenience routines for unifying elements with different domains.
 It assists in Scalar Multiplication and getitem for DomainMatrix.
 
 """
+from types import NotImplementedType
+from typing import Any, Self
+
+
 class DomainScalar:
     r"""
     docstring

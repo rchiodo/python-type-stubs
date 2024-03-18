@@ -1,3 +1,5 @@
+from typing import Any, Literal
+from sympy.core.numbers import Integer
 from sympy.external.gmpy import MPZ
 from sympy.polys.domains.characteristiczero import CharacteristicZero
 from sympy.polys.domains.ring import Ring
@@ -23,8 +25,8 @@ class IntegerRing(Ring, CharacteristicZero, SimpleDomain):
     rep = ...
     alias = ...
     dtype = MPZ
-    zero = dtype(0)
-    one = dtype(1)
+    zero = ...
+    one = ...
     tp = type(one)
     is_ZZ = ...
     is_Numerical = ...
@@ -107,7 +109,7 @@ class IntegerRing(Ring, CharacteristicZero, SimpleDomain):
         """
         ...
     
-    def log(self, a, b) -> dtype:
+    def log(self, a, b) -> Any:
         r"""Logarithm of *a* to the base *b*.
 
         Parameters

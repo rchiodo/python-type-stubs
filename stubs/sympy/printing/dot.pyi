@@ -1,4 +1,7 @@
 __all__ = ['dotprint']
+from typing import Any
+
+
 default_styles = ...
 slotClasses = ...
 def purestr(x, with_args=...) -> tuple[str | Any, tuple[()] | tuple[Any, ...]] | str:
