@@ -6,9 +6,6 @@ from sympy.matrices import Determinant, MatrixBase, Trace
 from sympy.matrices.expressions.matexpr import MatrixElement
 from sympy.assumptions.predicates.sets import AlgebraicPredicate, AntihermitianPredicate, ComplexPredicate, ExtendedRealPredicate, HermitianPredicate, ImaginaryPredicate, IntegerPredicate, IrrationalPredicate, RationalPredicate, RealPredicate
 
-"""
-Handlers for predicates related to set membership: integer, rational, etc.
-"""
 @IntegerPredicate.register_many(int, Integer)
 def _(expr, assumptions) -> Literal[True]:
     ...
@@ -23,21 +20,10 @@ def _(expr, assumptions):
 
 @IntegerPredicate.register_many(Add, Pow)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Integer + Integer       -> Integer
-    * Integer + !Integer      -> !Integer
-    * !Integer + !Integer -> ?
-    """
     ...
 
 @IntegerPredicate.register(Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Integer*Integer      -> Integer
-    * Integer*Irrational   -> !Integer
-    * Odd/Even             -> !Integer
-    * Integer*Rational     -> ?
-    """
     ...
 
 @IntegerPredicate.register(Abs)
@@ -66,20 +52,10 @@ def _(expr, assumptions):
 
 @RationalPredicate.register_many(Add, Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Rational + Rational     -> Rational
-    * Rational + !Rational    -> !Rational
-    * !Rational + !Rational   -> ?
-    """
     ...
 
 @RationalPredicate.register(Pow)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Rational ** Integer      -> Rational
-    * Irrational ** Rational   -> Irrational
-    * Rational ** Irrational   -> ?
-    """
     ...
 
 @RationalPredicate.register_many(asin, atan, cos, sin, tan)
@@ -120,38 +96,14 @@ def _(expr, assumptions):
 
 @RealPredicate.register(Add)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Real + Real              -> Real
-    * Real + (Complex & !Real) -> !Real
-    """
     ...
 
 @RealPredicate.register(Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Real*Real               -> Real
-    * Real*Imaginary          -> !Real
-    * Imaginary*Imaginary     -> Real
-    """
     ...
 
 @RealPredicate.register(Pow)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Real**Integer              -> Real
-    * Positive**Real             -> Real
-    * Real**(Integer/Even)       -> Real if base is nonnegative
-    * Real**(Integer/Odd)        -> Real
-    * Imaginary**(Integer/Even)  -> Real
-    * Imaginary**(Integer/Odd)   -> not Real
-    * Imaginary**Real            -> ? since Real could be 0 (giving real)
-                                    or 1 (giving imaginary)
-    * b**Imaginary               -> Real if log(b) is imaginary and b != 0
-                                    and exponent != integer multiple of
-                                    I*pi/log(b)
-    * Real**Real                 -> ? e.g. sqrt(-1) is imaginary and
-                                    sqrt(2) is not
-    """
     ...
 
 @RealPredicate.register_many(cos, sin)
@@ -188,28 +140,14 @@ def _(expr, assumptions) -> bool | None:
 
 @HermitianPredicate.register(Add)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Hermitian + Hermitian  -> Hermitian
-    * Hermitian + !Hermitian -> !Hermitian
-    """
     ...
 
 @HermitianPredicate.register(Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    As long as there is at most only one noncommutative term:
-
-    * Hermitian*Hermitian         -> Hermitian
-    * Hermitian*Antihermitian     -> !Hermitian
-    * Antihermitian*Antihermitian -> Hermitian
-    """
     ...
 
 @HermitianPredicate.register(Pow)
 def _(expr, assumptions) -> Literal[True]:
-    """
-    * Hermitian**Integer -> Hermitian
-    """
     ...
 
 @HermitianPredicate.register_many(cos, sin)
@@ -262,34 +200,14 @@ def _(expr, assumptions):
 
 @ImaginaryPredicate.register(Add)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Imaginary + Imaginary -> Imaginary
-    * Imaginary + Complex   -> ?
-    * Imaginary + Real      -> !Imaginary
-    """
     ...
 
 @ImaginaryPredicate.register(Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Real*Imaginary      -> Imaginary
-    * Imaginary*Imaginary -> Real
-    """
     ...
 
 @ImaginaryPredicate.register(Pow)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Imaginary**Odd        -> Imaginary
-    * Imaginary**Even       -> Real
-    * b**Imaginary          -> !Imaginary if exponent is an integer
-                               multiple of I*pi/log(b)
-    * Imaginary**Real       -> ?
-    * Positive**Real        -> Real
-    * Negative**Integer     -> Real
-    * Negative**(Integer/2) -> Imaginary
-    * Negative**Real        -> not Imaginary if exponent is not Rational
-    """
     ...
 
 @ImaginaryPredicate.register(log)
@@ -314,30 +232,14 @@ def _(expr, assumptions) -> bool | None:
 
 @AntihermitianPredicate.register(Add)
 def _(expr, assumptions) -> bool | None:
-    """
-    * Antihermitian + Antihermitian  -> Antihermitian
-    * Antihermitian + !Antihermitian -> !Antihermitian
-    """
     ...
 
 @AntihermitianPredicate.register(Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    As long as there is at most only one noncommutative term:
-
-    * Hermitian*Hermitian         -> !Antihermitian
-    * Hermitian*Antihermitian     -> Antihermitian
-    * Antihermitian*Antihermitian -> !Antihermitian
-    """
     ...
 
 @AntihermitianPredicate.register(Pow)
 def _(expr, assumptions) -> bool:
-    """
-    * Hermitian**Integer  -> !Antihermitian
-    * Antihermitian**Even -> !Antihermitian
-    * Antihermitian**Odd  -> Antihermitian
-    """
     ...
 
 @AntihermitianPredicate.register(MatrixBase)

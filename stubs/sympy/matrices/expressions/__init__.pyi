@@ -19,5 +19,4 @@ from sympy.matrices.expressions.permutation import MatrixPermute, PermutationMat
 from sympy.matrices.expressions.sets import MatrixSet
 from sympy.matrices.expressions.special import Identity, OneMatrix, ZeroMatrix
 
-""" A module which handles Matrix Expressions """
 __all__ = ['MatrixSlice', 'BlockMatrix', 'BlockDiagMatrix', 'block_collapse', 'blockcut', 'FunctionMatrix', 'CompanionMatrix', 'Inverse', 'MatAdd', 'Identity', 'MatrixExpr', 'MatrixSymbol', 'ZeroMatrix', 'OneMatrix', 'matrix_symbols', 'MatrixSet', 'MatMul', 'MatPow', 'Trace', 'trace', 'Determinant', 'det', 'Transpose', 'Adjoint', 'hadamard_product', 'HadamardProduct', 'hadamard_power', 'HadamardPower', 'DiagonalMatrix', 'DiagonalOf', 'DiagMatrix', 'diagonalize_vector', 'DotProduct', 'kronecker_product', 'KroneckerProduct', 'combine_kronecker', 'PermutationMatrix', 'MatrixPermute', 'Permanent', 'per']

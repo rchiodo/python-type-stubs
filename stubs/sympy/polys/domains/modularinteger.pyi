@@ -4,10 +4,8 @@ from sympy.polys.polyutils import PicklableWithSlots
 from sympy.polys.domains.domainelement import DomainElement
 from sympy.utilities import public
 
-"""Implementation of :class:`ModularInteger` class. """
 @public
 class ModularInteger(PicklableWithSlots, DomainElement):
-    """A class representing a modular integer. """
     __slots__ = ...
     def parent(self) -> None:
         ...
@@ -100,6 +98,5 @@ class ModularInteger(PicklableWithSlots, DomainElement):
 
 _modular_integer_cache: dict[tuple[Any, Any, Any], type[ModularInteger]] = ...
 def ModularIntegerFactory(_mod, _dom, _sym, parent) -> type[Any]:
-    """Create custom class for specific integer modulus."""
     ...
 

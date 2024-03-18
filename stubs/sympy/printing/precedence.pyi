@@ -1,4 +1,4 @@
-"""A module providing information about the necessity of brackets"""
+
 PRECEDENCE = ...
 PRECEDENCE_VALUES = ...
 def precedence_Mul(item) -> int:
@@ -24,18 +24,9 @@ def precedence_UnevaluatedExpr(item) -> float:
 
 PRECEDENCE_FUNCTIONS = ...
 def precedence(item) -> int:
-    """Returns the precedence of a given object.
-
-    This is the precedence for StrPrinter.
-    """
     ...
 
 PRECEDENCE_TRADITIONAL = ...
 def precedence_traditional(item) -> int:
-    """Returns the precedence of a given object according to the
-    traditional rules of mathematics.
-
-    This is the precedence for the LaTeX and pretty printer.
-    """
     ...
 

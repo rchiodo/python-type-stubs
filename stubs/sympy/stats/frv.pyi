@@ -9,44 +9,17 @@ from sympy.stats.crv import ProductContinuousDomain
 from sympy.stats.drv import ProductDiscreteDomain
 from sympy.stats.rv import ConditionalDomain, Density, Distribution, IndependentProductPSpace, NamedArgsMixin, PSpace, ProductDomain, RandomDomain, SinglePSpace
 
-"""
-Finite Discrete Random Variables Module
-
-See Also
-========
-sympy.stats.frv_types
-sympy.stats.rv
-sympy.stats.crv
-"""
 class FiniteDensity(dict):
-    """
-    A domain with Finite Density.
-    """
     def __call__(self, item) -> Literal[0]:
-        """
-        Make instance of a class callable.
-
-        If item belongs to current instance of a class, return it.
-
-        Otherwise, return 0.
-        """
         ...
     
     @property
     def dict(self) -> dict[Any, Any]:
-        """
-        Return item as dictionary.
-        """
         ...
     
 
 
 class FiniteDomain(RandomDomain):
-    """
-    A domain with discrete finite support
-
-    Represented using a FiniteSet.
-    """
     is_Finite = ...
     @property
     def symbols(self) -> FiniteSet:
@@ -72,11 +45,6 @@ class FiniteDomain(RandomDomain):
 
 
 class SingleFiniteDomain(FiniteDomain):
-    """
-    A FiniteDomain over a single symbol/set
-
-    Example: The possibilities of a *single* die roll.
-    """
     def __new__(cls, symbol, set) -> Self:
         ...
     
@@ -105,11 +73,6 @@ class SingleFiniteDomain(FiniteDomain):
 
 
 class ProductFiniteDomain(ProductDomain, FiniteDomain):
-    """
-    A Finite domain consisting of several other FiniteDomains
-
-    Example: The possibilities of the rolls of three independent dice
-    """
     def __iter__(self) -> Generator[frozenset[Any], None, None]:
         ...
     
@@ -120,16 +83,7 @@ class ProductFiniteDomain(ProductDomain, FiniteDomain):
 
 
 class ConditionalFiniteDomain(ConditionalDomain, ProductFiniteDomain):
-    """
-    A FiniteDomain that has been restricted by a condition
-
-    Example: The possibilities of a die roll under the condition that the
-    roll is even.
-    """
     def __new__(cls, domain, condition) -> Self:
-        """
-        Create a new instance of ConditionalFiniteDomain class
-        """
         ...
     
     def __contains__(self, other) -> Basic | Literal[False]:
@@ -181,11 +135,6 @@ class SingleFiniteDistribution(Distribution, NamedArgsMixin):
 
 
 class FinitePSpace(PSpace):
-    """
-    A Finite Probability Space
-
-    Represents the probabilities of a finite number of events.
-    """
     is_Finite = ...
     def __new__(cls, domain, density) -> Self:
         ...
@@ -228,25 +177,11 @@ class FinitePSpace(PSpace):
         ...
     
     def sample(self, size=..., library=..., seed=...) -> dict[Any, Any]:
-        """
-        Internal sample method
-
-        Returns dictionary mapping RandomSymbol to realization value.
-        """
         ...
     
 
 
 class SingleFinitePSpace(SinglePSpace, FinitePSpace):
-    """
-    A single finite probability space
-
-    Represents the probabilities of a set of random events that can be
-    attributed to a single variable/symbol.
-
-    This class is implemented by many of the standard FiniteRV types such as
-    Die, Bernoulli, Coin, etc....
-    """
     @property
     def domain(self) -> SingleFiniteDomain:
         ...
@@ -282,20 +217,11 @@ class SingleFinitePSpace(SinglePSpace, FinitePSpace):
         ...
     
     def conditional_space(self, condition) -> FinitePSpace:
-        """
-        This method is used for transferring the
-        computation to probability method because
-        conditional space of random variables with
-        symbolic dimensions is currently not possible.
-        """
         ...
     
 
 
 class ProductFinitePSpace(IndependentProductPSpace, FinitePSpace):
-    """
-    A collection of several independent finite probability spaces
-    """
     @property
     def domain(self) -> ProductDiscreteDomain | ProductContinuousDomain | ProductFiniteDomain:
         ...

@@ -11,9 +11,6 @@ from sympy.tensor.array.expressions.array_expressions import ArrayAdd, ArrayCont
 
 @singledispatch
 def array_derive(expr, x):
-    """
-    Derivatives (gradients) for array expressions.
-    """
     ...
 
 @array_derive.register(Expr)

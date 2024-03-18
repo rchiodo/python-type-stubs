@@ -1,20 +1,9 @@
 from typing import Any
 from sympy.utilities import public
 
-"""
-Solving solvable quintics - An implementation of DS Dummit's paper
-
-Paper :
-https://www.ams.org/journals/mcom/1991-57-195/S0025-5718-1991-1079014-X/S0025-5718-1991-1079014-X.pdf
-
-Mathematica notebook:
-http://www.emba.uvm.edu/~ddummit/quintics/quintics.nb
-
-"""
 x = ...
 @public
 class PolyQuintic:
-    """Special functions for solvable quintics"""
     def __init__(self, poly) -> None:
         ...
     

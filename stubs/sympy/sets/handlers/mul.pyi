@@ -19,10 +19,6 @@ def _(x, y):
 
 @_set_mul.register(Interval, Interval)
 def _(x, y) -> FiniteSet | Interval:
-    """
-    Multiplications in interval arithmetic
-    https://en.wikipedia.org/wiki/Interval_arithmetic
-    """
     ...
 
 @_set_div.register(Basic, Basic)
@@ -39,9 +35,5 @@ def _(x, y) -> None:
 
 @_set_div.register(Interval, Interval)
 def _(x, y) -> FiniteSet | Interval | Any | ImageSet | Union:
-    """
-    Divisions in interval arithmetic
-    https://en.wikipedia.org/wiki/Interval_arithmetic
-    """
     ...
 

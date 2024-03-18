@@ -3,11 +3,6 @@ from typing import Literal, Self
 from sympy.core import Basic
 
 class OmegaPower(Basic):
-    """
-    Represents ordinal exponential and multiplication terms one of the
-    building blocks of the :class:`Ordinal` class.
-    In ``OmegaPower(a, b)``, ``a`` represents exponent and ``b`` represents multiplicity.
-    """
     def __new__(cls, a, b) -> Self:
         ...
     
@@ -31,30 +26,6 @@ class OmegaPower(Basic):
 
 
 class Ordinal(Basic):
-    """
-    Represents ordinals in Cantor normal form.
-
-    Internally, this class is just a list of instances of OmegaPower.
-
-    Examples
-    ========
-    >>> from sympy import Ordinal, OmegaPower
-    >>> from sympy.sets.ordinals import omega
-    >>> w = omega
-    >>> w.is_limit_ordinal
-    True
-    >>> Ordinal(OmegaPower(w + 1, 1), OmegaPower(3, 2))
-    w**(w + 1) + w**3*2
-    >>> 3 + w
-    w
-    >>> (w + 1) * w
-    w**2
-
-    References
-    ==========
-
-    .. [1] https://en.wikipedia.org/wiki/Ordinal_arithmetic
-    """
     def __new__(cls, *terms) -> Self:
         ...
     
@@ -126,25 +97,10 @@ class Ordinal(Basic):
 
 
 class OrdinalZero(Ordinal):
-    """The ordinal zero.
-
-    OrdinalZero can be imported as ``ord0``.
-    """
     ...
 
 
 class OrdinalOmega(Ordinal):
-    """The ordinal omega which forms the base of all ordinals in cantor normal form.
-
-    OrdinalOmega can be imported as ``omega``.
-
-    Examples
-    ========
-
-    >>> from sympy.sets.ordinals import omega
-    >>> omega + omega
-    w*2
-    """
     def __new__(cls) -> Self:
         ...
     

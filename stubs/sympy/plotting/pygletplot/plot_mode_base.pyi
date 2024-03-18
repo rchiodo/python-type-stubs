@@ -2,12 +2,6 @@ from typing import Any, Callable
 from sympy.plotting.pygletplot.plot_mode import PlotMode
 
 class PlotModeBase(PlotMode):
-    """
-    Intended parent class for plotting
-    modes. Provides base functionality
-    in conjunction with its parent,
-    PlotMode.
-    """
     intervals = ...
     aliases = ...
     is_default = ...
@@ -24,20 +18,10 @@ class PlotModeBase(PlotMode):
     
     @synchronized
     def push_wireframe(self, function) -> None:
-        """
-        Push a function which performs gl commands
-        used to build a display list. (The list is
-        built outside of the function)
-        """
         ...
     
     @synchronized
     def push_solid(self, function) -> None:
-        """
-        Push a function which performs gl commands
-        used to build a display list. (The list is
-        built outside of the function)
-        """
         ...
     
     @synchronized

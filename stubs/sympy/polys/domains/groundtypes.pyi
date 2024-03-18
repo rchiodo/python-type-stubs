@@ -2,7 +2,6 @@ import builtins
 from typing import Any
 from sympy.external.gmpy import GROUND_TYPES
 
-"""Ground types for various mathematical domains in SymPy. """
 PythonInteger = builtins.int
 PythonReal = builtins.float
 PythonComplex = builtins.complex

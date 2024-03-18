@@ -1,8 +1,5 @@
 from sympy.printing.c import C89CodePrinter, C99CodePrinter
 
-"""
-C++ code printer
-"""
 reserved = ...
 _math_functions = ...
 class _CXXCodePrinterBase:

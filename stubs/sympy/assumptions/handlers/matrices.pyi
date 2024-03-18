@@ -5,10 +5,6 @@ from sympy.matrices.expressions.factorizations import Factorization
 from sympy.matrices.expressions.fourier import DFT
 from sympy.assumptions.predicates.matrices import ComplexElementsPredicate, DiagonalPredicate, FullRankPredicate, IntegerElementsPredicate, InvertiblePredicate, LowerTriangularPredicate, OrthogonalPredicate, PositiveDefinitePredicate, RealElementsPredicate, SquarePredicate, SymmetricPredicate, UnitaryPredicate, UpperTriangularPredicate
 
-"""
-This module contains query handlers responsible for Matrices queries:
-Square, Symmetric, Invertible etc.
-"""
 @SquarePredicate.register(MatrixExpr)
 def _(expr, assumptions):
     ...
@@ -346,11 +342,9 @@ def _(expr, assumptions) -> Literal[True] | None:
     ...
 
 def BM_elements(predicate, expr, assumptions) -> bool:
-    """ Block Matrix elements. """
     ...
 
 def MS_elements(predicate, expr, assumptions) -> bool | None:
-    """ Matrix Slice elements. """
     ...
 
 def MatMul_elements(matrix_predicate, scalar_predicate, expr, assumptions) -> bool | None:

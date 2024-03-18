@@ -4,39 +4,14 @@ from sympy.core.function import UndefinedFunction
 from sympy.core.power import Pow
 from sympy.printing.codeprinter import CodePrinter
 
-"""
-C code printer
-
-The C89CodePrinter & C99CodePrinter converts single SymPy expressions into
-single C expressions, using the functions defined in math.h where possible.
-
-A complete code generator, which uses ccode extensively, can be found in
-sympy.utilities.codegen. The codegen module can be used to generate complete
-source code files that are compilable without further modifications.
-
-
-"""
 known_functions_C89 = ...
 known_functions_C99 = ...
 reserved_words = ...
 reserved_words_c99 = ...
 def get_math_macros() -> dict[Any | type[UndefinedFunction] | Pow, str]:
-    """ Returns a dictionary with math-related macros from math.h/cmath
-
-    Note that these macros are not strictly required by the C/C++-standard.
-    For MSVC they are enabled by defining "_USE_MATH_DEFINES" (preferably
-    via a compilation flag).
-
-    Returns
-    =======
-
-    Dictionary mapping SymPy expressions to strings (macro names)
-
-    """
     ...
 
 class C89CodePrinter(CodePrinter):
-    """A printer to convert Python expressions to strings of C code"""
     printmethod = ...
     language = ...
     standard = ...
@@ -56,7 +31,6 @@ class C89CodePrinter(CodePrinter):
         ...
     
     def indent_code(self, code) -> str | list[Any]:
-        """Accepts a string of code or a list of code lines"""
         ...
     
     _print_List = ...

@@ -1,14 +1,10 @@
 from typing import Callable
 
-""" Caching facility for SymPy """
 class _cache(list):
-    """ List of cached functions """
     def print_cache(self) -> None:
-        """print cache info"""
         ...
     
     def clear_cache(self) -> None:
-        """clear cache content"""
         ...
     
 
@@ -31,11 +27,6 @@ def cached_property(func) -> property:
     ...
 
 def lazy_function(module: str, name: str) -> Callable:
-    """Create a lazy proxy for a function in a module.
-
-    The module containing the function is not imported until the function is used.
-
-    """
     class LazyFunctionMeta(type):
         ...
     

@@ -3,19 +3,6 @@ from sympy.core.basic import Basic
 from sympy.matrices.expressions.matexpr import MatrixExpr
 
 class ZeroMatrix(MatrixExpr):
-    """The Matrix Zero 0 - additive identity
-
-    Examples
-    ========
-
-    >>> from sympy import MatrixSymbol, ZeroMatrix
-    >>> A = MatrixSymbol('A', 3, 5)
-    >>> Z = ZeroMatrix(3, 5)
-    >>> A + Z
-    A
-    >>> Z*A.T
-    0
-    """
     is_ZeroMatrix = ...
     def __new__(cls, m, n) -> Self:
         ...
@@ -27,12 +14,6 @@ class ZeroMatrix(MatrixExpr):
 
 
 class GenericZeroMatrix(ZeroMatrix):
-    """
-    A zero matrix without a specified shape
-
-    This exists primarily so MatAdd() with no arguments can return something
-    meaningful.
-    """
     def __new__(cls) -> Self:
         ...
     
@@ -60,17 +41,6 @@ class GenericZeroMatrix(ZeroMatrix):
 
 
 class Identity(MatrixExpr):
-    """The Matrix Identity I - multiplicative identity
-
-    Examples
-    ========
-
-    >>> from sympy import Identity, MatrixSymbol
-    >>> A = MatrixSymbol('A', 3, 5)
-    >>> I = Identity(3)
-    >>> I*A
-    A
-    """
     is_Identity = ...
     def __new__(cls, n) -> Self:
         ...
@@ -94,12 +64,6 @@ class Identity(MatrixExpr):
 
 
 class GenericIdentity(Identity):
-    """
-    An identity matrix without a specified shape
-
-    This exists primarily so MatMul() with no arguments can return something
-    meaningful.
-    """
     def __new__(cls) -> Self:
         ...
     
@@ -131,9 +95,6 @@ class GenericIdentity(Identity):
 
 
 class OneMatrix(MatrixExpr):
-    """
-    Matrix whose all entries are ones.
-    """
     def __new__(cls, m, n, evaluate=...) -> Identity | Self:
         ...
     

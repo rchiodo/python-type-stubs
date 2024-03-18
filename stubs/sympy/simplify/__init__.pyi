@@ -11,10 +11,4 @@ from sympy.simplify.combsimp import combsimp
 from sympy.simplify.gammasimp import gammasimp
 from sympy.simplify.ratsimp import ratsimp, ratsimpmodprime
 
-"""The module helps converting SymPy expressions into shorter forms of them.
-
-for example:
-the expression E**(pi*I) will be converted into -1
-the expression (x+x)**2 will be converted into 4*x**2
-"""
 __all__ = ['simplify', 'hypersimp', 'hypersimilar', 'logcombine', 'separatevars', 'posify', 'besselsimp', 'kroneckersimp', 'signsimp', 'nsimplify', 'FU', 'fu', 'sqrtdenest', 'cse', 'epath', 'EPath', 'hyperexpand', 'collect', 'rcollect', 'radsimp', 'collect_const', 'fraction', 'numer', 'denom', 'trigsimp', 'exptrigsimp', 'powsimp', 'powdenest', 'combsimp', 'gammasimp', 'ratsimp', 'ratsimpmodprime']

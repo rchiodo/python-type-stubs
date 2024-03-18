@@ -24,19 +24,9 @@ class ColorScheme:
         ...
     
     def apply_to_curve(self, verts, u_set, set_len=..., inc_pos=...) -> list[Any]:
-        """
-        Apply this color scheme to a
-        set of vertices over a single
-        independent variable u.
-        """
         ...
     
     def apply_to_surface(self, verts, u_set, v_set, set_len=..., inc_pos=...) -> list[Any]:
-        """
-        Apply this color scheme to a
-        set of vertices over two
-        independent variables u and v.
-        """
         ...
     
     def str_base(self) -> str:

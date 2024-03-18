@@ -3,10 +3,8 @@ from sympy.polys.domains.domainelement import DomainElement
 from sympy.utilities import public
 from mpmath.ctx_mp_python import PythonMPContext, _mpc, _mpf
 
-"""Real and complex elements. """
 @public
 class RealElement(_mpf, DomainElement):
-    """An element of a real domain. """
     __slots__ = ...
     _mpf_ = ...
     def parent(self):
@@ -16,7 +14,6 @@ class RealElement(_mpf, DomainElement):
 
 @public
 class ComplexElement(_mpc, DomainElement):
-    """An element of a complex domain. """
     __slots__ = ...
     _mpc_ = ...
     def parent(self):

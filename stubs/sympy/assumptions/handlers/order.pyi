@@ -6,9 +6,6 @@ from sympy.matrices import Determinant, Trace
 from sympy.matrices.expressions.matexpr import MatrixElement
 from sympy.assumptions.predicates.order import ExtendedNegativePredicate, ExtendedNonNegativePredicate, ExtendedNonPositivePredicate, ExtendedNonZeroPredicate, ExtendedPositivePredicate, NegativePredicate, NonNegativePredicate, NonPositivePredicate, NonZeroPredicate, PositivePredicate, ZeroPredicate
 
-"""
-Handlers related to order relations: positive, negative, etc.
-"""
 @NegativePredicate.register(Basic)
 def _(expr, assumptions) -> Literal[False] | None:
     ...
@@ -19,10 +16,6 @@ def _(expr, assumptions):
 
 @NegativePredicate.register(Add)
 def _(expr, assumptions) -> bool | None:
-    """
-    Positive + Positive -> Positive,
-    Negative + Negative -> Negative
-    """
     ...
 
 @NegativePredicate.register(Mul)
@@ -31,11 +24,6 @@ def _(expr, assumptions) -> bool | None:
 
 @NegativePredicate.register(Pow)
 def _(expr, assumptions) -> bool | None:
-    """
-    Real ** Even -> NonNegative
-    Real ** Odd  -> same_as_base
-    NonNegative ** Positive -> NonNegative
-    """
     ...
 
 @NegativePredicate.register_many(Abs, ImaginaryUnit)

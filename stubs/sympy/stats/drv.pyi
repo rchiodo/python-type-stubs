@@ -17,15 +17,6 @@ class DiscreteDistribution(Distribution):
 
 
 class SingleDiscreteDistribution(DiscreteDistribution, NamedArgsMixin):
-    """ Discrete distribution of a single variable.
-
-    Serves as superclass for PoissonDistribution etc....
-
-    Provides methods for pdf, cdf, and sampling
-
-    See Also:
-        sympy.stats.crv_types.*
-    """
     set = ...
     def __new__(cls, *args) -> Self:
         ...
@@ -36,26 +27,16 @@ class SingleDiscreteDistribution(DiscreteDistribution, NamedArgsMixin):
     
     @cacheit
     def compute_cdf(self, **kwargs) -> Lambda:
-        """ Compute the CDF from the PDF.
-
-        Returns a Lambda.
-        """
         ...
     
     def cdf(self, x, **kwargs) -> Basic:
-        """ Cumulative density function """
         ...
     
     @cacheit
     def compute_characteristic_function(self, **kwargs) -> Lambda:
-        """ Compute the characteristic function from the PDF.
-
-        Returns a Lambda.
-        """
         ...
     
     def characteristic_function(self, t, **kwargs) -> Basic:
-        """ Characteristic function """
         ...
     
     @cacheit
@@ -67,18 +48,12 @@ class SingleDiscreteDistribution(DiscreteDistribution, NamedArgsMixin):
     
     @cacheit
     def compute_quantile(self, **kwargs) -> Lambda:
-        """ Compute the Quantile from the PDF.
-
-        Returns a Lambda.
-        """
         ...
     
     def quantile(self, x, **kwargs) -> Basic:
-        """ Cumulative density function """
         ...
     
     def expectation(self, expr, var, evaluate=..., **kwargs) -> Any | tuple[Any, ...] | Sum | Order | Piecewise | Basic | Equality | Relational | Ne | Literal[0] | None:
-        """ Expectation of expression over distribution """
         ...
     
     def __call__(self, *args):
@@ -87,10 +62,6 @@ class SingleDiscreteDistribution(DiscreteDistribution, NamedArgsMixin):
 
 
 class DiscreteDomain(RandomDomain):
-    """
-    A domain with discrete support with step size one.
-    Represented using symbols and Range.
-    """
     is_Discrete = ...
 
 
@@ -101,10 +72,6 @@ class SingleDiscreteDomain(DiscreteDomain, SingleDomain):
 
 
 class ConditionalDiscreteDomain(DiscreteDomain, ConditionalDomain):
-    """
-    Domain with discrete support of step size one, that is restricted by
-    some condition.
-    """
     @property
     def set(self) -> FiniteSet | Intersection | Union | Complement:
         ...
@@ -139,7 +106,6 @@ class ProductDiscreteDomain(ProductDomain, DiscreteDomain):
 
 
 class SingleDiscretePSpace(DiscretePSpace, SinglePSpace):
-    """ Discrete probability space over a single univariate variable """
     is_real = ...
     @property
     def set(self):
@@ -150,11 +116,6 @@ class SingleDiscretePSpace(DiscretePSpace, SinglePSpace):
         ...
     
     def sample(self, size=..., library=..., seed=...) -> dict[RandomSymbol, Any]:
-        """
-        Internal sample method.
-
-        Returns dictionary mapping RandomSymbol to realization value.
-        """
         ...
     
     def compute_expectation(self, expr, rvs=..., evaluate=..., **kwargs) -> Equality | Relational | Ne | Sum:

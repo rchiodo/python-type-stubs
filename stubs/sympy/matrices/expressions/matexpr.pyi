@@ -19,24 +19,6 @@ from sympy.matrices.kind import MatrixKind
 from sympy.series.order import Order
 
 class MatrixExpr(Expr):
-    """Superclass for Matrix Expressions
-
-    MatrixExprs represent abstract matrices, linear transformations represented
-    within a particular basis.
-
-    Examples
-    ========
-
-    >>> from sympy import MatrixSymbol
-    >>> A = MatrixSymbol('A', 3, 3)
-    >>> y = MatrixSymbol('y', 3, 1)
-    >>> x = (A.T*A).I * A * y
-
-    See Also
-    ========
-
-    MatrixSymbol, MatAdd, MatMul, Transpose, Inverse
-    """
     __slots__: tuple[str, ...] = ...
     _iterable = ...
     _op_priority = ...
@@ -145,7 +127,6 @@ class MatrixExpr(Expr):
         ...
     
     def as_coeff_Mul(self, rational=...) -> tuple[Any, Self]:
-        """Efficiently extract the coefficient of a product."""
         ...
     
     def conjugate(self) -> type[UndefinedFunction]:
@@ -179,68 +160,15 @@ class MatrixExpr(Expr):
         ...
     
     def as_explicit(self) -> ImmutableDenseMatrix:
-        """
-        Returns a dense Matrix with elements represented explicitly
-
-        Returns an object of type ImmutableDenseMatrix.
-
-        Examples
-        ========
-
-        >>> from sympy import Identity
-        >>> I = Identity(3)
-        >>> I
-        I
-        >>> I.as_explicit()
-        Matrix([
-        [1, 0, 0],
-        [0, 1, 0],
-        [0, 0, 1]])
-
-        See Also
-        ========
-        as_mutable: returns mutable Matrix type
-
-        """
         ...
     
     def as_mutable(self) -> Matrix:
-        """
-        Returns a dense, mutable matrix with elements represented explicitly
-
-        Examples
-        ========
-
-        >>> from sympy import Identity
-        >>> I = Identity(3)
-        >>> I
-        I
-        >>> I.shape
-        (3, 3)
-        >>> I.as_mutable()
-        Matrix([
-        [1, 0, 0],
-        [0, 1, 0],
-        [0, 0, 1]])
-
-        See Also
-        ========
-        as_explicit: returns ImmutableDenseMatrix
-        """
         ...
     
     def __array__(self):
         ...
     
     def equals(self, other) -> bool:
-        """
-        Test elementwise equality between matrices, potentially of different
-        types
-
-        >>> from sympy import Identity, eye
-        >>> Identity(3).equals(eye(3))
-        True
-        """
         ...
     
     def canonicalize(self) -> Self:
@@ -251,46 +179,6 @@ class MatrixExpr(Expr):
     
     @staticmethod
     def from_index_summation(expr, first_index=..., last_index=..., dimensions=...):
-        r"""
-        Parse expression of matrices with explicitly summed indices into a
-        matrix expression without indices, if possible.
-
-        This transformation expressed in mathematical notation:
-
-        `\sum_{j=0}^{N-1} A_{i,j} B_{j,k} \Longrightarrow \mathbf{A}\cdot \mathbf{B}`
-
-        Optional parameter ``first_index``: specify which free index to use as
-        the index starting the expression.
-
-        Examples
-        ========
-
-        >>> from sympy import MatrixSymbol, MatrixExpr, Sum
-        >>> from sympy.abc import i, j, k, l, N
-        >>> A = MatrixSymbol("A", N, N)
-        >>> B = MatrixSymbol("B", N, N)
-        >>> expr = Sum(A[i, j]*B[j, k], (j, 0, N-1))
-        >>> MatrixExpr.from_index_summation(expr)
-        A*B
-
-        Transposition is detected:
-
-        >>> expr = Sum(A[j, i]*B[j, k], (j, 0, N-1))
-        >>> MatrixExpr.from_index_summation(expr)
-        A.T*B
-
-        Detect the trace:
-
-        >>> expr = Sum(A[i, i], (i, 0, N-1))
-        >>> MatrixExpr.from_index_summation(expr)
-        Trace(A)
-
-        More complicated expressions:
-
-        >>> expr = Sum(A[i, j]*B[k, j]*A[l, k], (j, 0, N-1), (k, 0, N-1))
-        >>> MatrixExpr.from_index_summation(expr)
-        A*B.T*A.T
-        """
         ...
     
     def applyfunc(self, func) -> MatrixExpr | ElementwiseApplyFunction:
@@ -325,22 +213,6 @@ class MatrixElement(Expr):
 
 
 class MatrixSymbol(MatrixExpr):
-    """Symbolic representation of a Matrix object
-
-    Creates a SymPy Symbol to represent a Matrix. This matrix has a shape and
-    can be included in Matrix Expressions
-
-    Examples
-    ========
-
-    >>> from sympy import MatrixSymbol, Identity
-    >>> A = MatrixSymbol('A', 3, 4) # A 3 by 4 Matrix
-    >>> B = MatrixSymbol('B', 4, 3) # A 4 by 3 Matrix
-    >>> A.shape
-    (3, 4)
-    >>> 2*A*B + Identity(3)
-    I + 2*A*B
-    """
     is_commutative = ...
     is_symbol = ...
     _diff_wrt = ...
@@ -365,18 +237,6 @@ def matrix_symbols(expr) -> list[Any]:
     ...
 
 class _LeftRightArgs:
-    r"""
-    Helper class to compute matrix derivatives.
-
-    The logic: when an expression is derived by a matrix `X_{mn}`, two lines of
-    matrix multiplications are created: the one contracted to `m` (first line),
-    and the one contracted to `n` (second line).
-
-    Transposition flips the side by which new matrices are connected to the
-    lines.
-
-    The trace connects the end of the two lines.
-    """
     def __init__(self, lines, higher=...) -> None:
         ...
     
@@ -409,10 +269,6 @@ class _LeftRightArgs:
         ...
     
     def rank(self) -> int:
-        """
-        Number of dimensions different from trivial (warning: not related to
-        matrix rank).
-        """
         ...
     
     def append_first(self, other) -> None:

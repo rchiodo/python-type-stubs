@@ -8,11 +8,6 @@ from sympy.matrices.immutable import ImmutableDenseMatrix, ImmutableSparseMatrix
 from sympy.matrices.expressions import Adjoint, BlockDiagMatrix, BlockMatrix, Determinant, DiagMatrix, DiagonalMatrix, DiagonalOf, DotProduct, FunctionMatrix, HadamardPower, HadamardProduct, Identity, Inverse, KroneckerProduct, MatAdd, MatMul, MatPow, MatrixExpr, MatrixPermute, MatrixSet, MatrixSlice, MatrixSymbol, OneMatrix, Permanent, PermutationMatrix, Trace, Transpose, ZeroMatrix, block_collapse, blockcut, det, diagonalize_vector, hadamard_product, kronecker_product, matrix_symbols, per, trace
 from sympy.matrices.utilities import dotprodsimp
 
-"""A module that handles matrices.
-
-Includes functions for fast creating matrices like zero, one/eye, random
-matrix, etc.
-"""
 MutableMatrix = MutableDenseMatrix
 Matrix = MutableMatrix
 ImmutableMatrix = ImmutableDenseMatrix

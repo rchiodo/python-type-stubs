@@ -4,9 +4,6 @@ from sympy.core.numbers import ImaginaryUnit, Infinity, Integer, NaN, NegativeIn
 from sympy.functions import Abs, im, re
 from sympy.assumptions.predicates.ntheory import CompositePredicate, EvenPredicate, OddPredicate, PrimePredicate
 
-"""
-Handlers for keys related to number theory: prime, even, odd, etc.
-"""
 @PrimePredicate.register(Expr)
 def _(expr, assumptions):
     ...
@@ -21,9 +18,6 @@ def _(expr, assumptions) -> bool | None:
 
 @PrimePredicate.register(Pow)
 def _(expr, assumptions) -> bool | None:
-    """
-    Integer**Integer     -> !Prime
-    """
     ...
 
 @PrimePredicate.register(Integer)
@@ -64,25 +58,10 @@ def _(expr, assumptions) -> bool | None:
 
 @EvenPredicate.register(Mul)
 def _(expr, assumptions) -> bool | None:
-    """
-    Even * Integer    -> Even
-    Even * Odd        -> Even
-    Integer * Odd     -> ?
-    Odd * Odd         -> Odd
-    Even * Even       -> Even
-    Integer * Integer -> Even if Integer + Integer = Odd
-    otherwise         -> ?
-    """
     ...
 
 @EvenPredicate.register(Add)
 def _(expr, assumptions) -> bool | None:
-    """
-    Even + Odd  -> Odd
-    Even + Even -> Even
-    Odd  + Odd  -> Even
-
-    """
     ...
 
 @EvenPredicate.register(Pow)

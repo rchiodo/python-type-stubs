@@ -22,10 +22,6 @@ def _(x, z) -> FiniteSet:
 
 @_set_pow.register(Interval, Integer)
 def _(x, exponent) -> FiniteSet | Interval | Union | None:
-    """
-    Powers in interval arithmetic
-    https://en.wikipedia.org/wiki/Interval_arithmetic
-    """
     ...
 
 @_set_pow.register(Interval, Infinity)

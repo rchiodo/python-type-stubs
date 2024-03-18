@@ -3,21 +3,12 @@ from typing import Any, Literal
 
 
 def get_model_matrix(array_type=..., glGetMethod=...) -> Array[c_float]:
-    """
-    Returns the current modelview matrix.
-    """
     ...
 
 def get_projection_matrix(array_type=..., glGetMethod=...) -> Array[c_float]:
-    """
-    Returns the current modelview matrix.
-    """
     ...
 
 def get_viewport() -> Array[c_int]:
-    """
-    Returns the current viewport.
-    """
     ...
 
 def get_direction_vectors() -> tuple[tuple[Any, Any, Any], tuple[Any, Any, Any], tuple[Any, Any, Any]]:
@@ -39,16 +30,6 @@ def vec_subs(a, b) -> tuple[Any, ...]:
     ...
 
 def billboard_matrix() -> None:
-    """
-    Removes rotational components of
-    current matrix so that primitives
-    are always drawn facing the viewer.
-
-    |1|0|0|x|
-    |0|1|0|x|
-    |0|0|1|x| (x means left unchanged)
-    |x|x|x|x|
-    """
     ...
 
 def create_bounds() -> list[list[Any]]:

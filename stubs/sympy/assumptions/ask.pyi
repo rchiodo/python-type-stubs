@@ -3,13 +3,7 @@ from sympy.assumptions.predicates.sets import *
 from sympy.assumptions.predicates.calculus import *
 from sympy.utilities.decorator import memoize_property
 
-"""Module for querying SymPy objects about assumptions."""
 class AssumptionKeys:
-    """
-    This class contains all the supported keys by ``ask``.
-    It should be accessed via the instance ``sympy.Q``.
-
-    """
     @memoize_property
     def hermitian(self) -> UndefinedPredicate | HermitianPredicate:
         ...
@@ -238,115 +232,11 @@ class AssumptionKeys:
 
 Q = ...
 def ask(proposition, assumptions=..., context=...) -> bool | None:
-    """
-    Function to evaluate the proposition with assumptions.
-
-    Explanation
-    ===========
-
-    This function evaluates the proposition to ``True`` or ``False`` if
-    the truth value can be determined. If not, it returns ``None``.
-
-    It should be discerned from :func:`~.refine()` which, when applied to a
-    proposition, simplifies the argument to symbolic ``Boolean`` instead of
-    Python built-in ``True``, ``False`` or ``None``.
-
-    **Syntax**
-
-        * ask(proposition)
-            Evaluate the *proposition* in global assumption context.
-
-        * ask(proposition, assumptions)
-            Evaluate the *proposition* with respect to *assumptions* in
-            global assumption context.
-
-    Parameters
-    ==========
-
-    proposition : Boolean
-        Proposition which will be evaluated to boolean value. If this is
-        not ``AppliedPredicate``, it will be wrapped by ``Q.is_true``.
-
-    assumptions : Boolean, optional
-        Local assumptions to evaluate the *proposition*.
-
-    context : AssumptionsContext, optional
-        Default assumptions to evaluate the *proposition*. By default,
-        this is ``sympy.assumptions.global_assumptions`` variable.
-
-    Returns
-    =======
-
-    ``True``, ``False``, or ``None``
-
-    Raises
-    ======
-
-    TypeError : *proposition* or *assumptions* is not valid logical expression.
-
-    ValueError : assumptions are inconsistent.
-
-    Examples
-    ========
-
-    >>> from sympy import ask, Q, pi
-    >>> from sympy.abc import x, y
-    >>> ask(Q.rational(pi))
-    False
-    >>> ask(Q.even(x*y), Q.even(x) & Q.integer(y))
-    True
-    >>> ask(Q.prime(4*x), Q.integer(x))
-    False
-
-    If the truth value cannot be determined, ``None`` will be returned.
-
-    >>> print(ask(Q.odd(3*x))) # cannot determine unless we know x
-    None
-
-    ``ValueError`` is raised if assumptions are inconsistent.
-
-    >>> ask(Q.integer(x), Q.even(x) & Q.odd(x))
-    Traceback (most recent call last):
-      ...
-    ValueError: inconsistent assumptions Q.even(x) & Q.odd(x)
-
-    Notes
-    =====
-
-    Relations in assumptions are not implemented (yet), so the following
-    will not give a meaningful result.
-
-    >>> ask(Q.positive(x), x > 0)
-
-    It is however a work in progress.
-
-    See Also
-    ========
-
-    sympy.assumptions.refine.refine : Simplification using assumptions.
-        Proposition is not reduced to ``None`` if the truth value cannot
-        be determined.
-    """
     ...
 
 def register_handler(key, handler) -> None:
-    """
-    Register a handler in the ask system. key must be a string and handler a
-    class inheriting from AskHandler.
-
-    .. deprecated:: 1.8.
-        Use multipledispatch handler instead. See :obj:`~.Predicate`.
-
-    """
     ...
 
 def remove_handler(key, handler) -> None:
-    """
-    Removes a handler from the ask system.
-
-    .. deprecated:: 1.8.
-        Use multipledispatch handler instead. See :obj:`~.Predicate`.
-
-    """
     ...
 

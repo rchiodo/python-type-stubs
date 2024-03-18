@@ -8,21 +8,7 @@ from sympy.stats.drv import ProductDiscreteDomain, SingleDiscretePSpace
 from sympy.stats.frv import ProductFiniteDomain
 from sympy.stats.rv import Distribution, NamedArgsMixin, ProductDomain, ProductPSpace, RandomSymbol, SingleDomain
 
-"""
-Joint Random Variables Module
-
-See Also
-========
-sympy.stats.rv
-sympy.stats.frv
-sympy.stats.crv
-sympy.stats.drv
-"""
 class JointPSpace(ProductPSpace):
-    """
-    Represents a joint probability space. Represented using symbols for
-    each component and a distribution.
-    """
     def __new__(cls, sym, dist) -> SingleContinuousPSpace | SingleDiscretePSpace | Self:
         ...
     
@@ -70,11 +56,6 @@ class JointPSpace(ProductPSpace):
         ...
     
     def sample(self, size=..., library=..., seed=...) -> dict[RandomSymbol, Any]:
-        """
-        Internal sample method
-
-        Returns dictionary mapping RandomSymbol to realization value.
-        """
         ...
     
     def probability(self, condition):
@@ -83,21 +64,18 @@ class JointPSpace(ProductPSpace):
 
 
 class SampleJointScipy:
-    """Returns the sample from scipy of the given distribution"""
     def __new__(cls, dist, size, seed=...) -> None:
         ...
     
 
 
 class SampleJointNumpy:
-    """Returns the sample from numpy of the given distribution"""
     def __new__(cls, dist, size, seed=...) -> None:
         ...
     
 
 
 class SampleJointPymc:
-    """Returns the sample from pymc of the given distribution"""
     def __new__(cls, dist, size, seed=...) -> None:
         ...
     
@@ -105,10 +83,6 @@ class SampleJointPymc:
 
 _get_sample_class_jrv = ...
 class JointDistribution(Distribution, NamedArgsMixin):
-    """
-    Represented by the random variables part of the joint distribution.
-    Contains methods for PDF, CDF, sampling, marginal densities, etc.
-    """
     _argnames = ...
     def __new__(cls, *args) -> Self:
         ...
@@ -125,7 +99,6 @@ class JointDistribution(Distribution, NamedArgsMixin):
         ...
     
     def sample(self, size=..., library=..., seed=...):
-        """ A random realization from the distribution """
         ...
     
     def __call__(self, *args):
@@ -134,23 +107,12 @@ class JointDistribution(Distribution, NamedArgsMixin):
 
 
 class JointRandomSymbol(RandomSymbol):
-    """
-    Representation of random symbols with joint probability distributions
-    to allow indexing."
-    """
     def __getitem__(self, key) -> Indexed | None:
         ...
     
 
 
 class MarginalDistribution(Distribution):
-    """
-    Represents the marginal distribution of a joint probability space.
-
-    Initialised using a probability distribution and random variables(or
-    their indexed components) which should be a part of the resultant
-    distribution.
-    """
     def __new__(cls, dist, *rvs) -> Self:
         ...
     

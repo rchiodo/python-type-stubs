@@ -1,51 +1,7 @@
 import contextlib
 from typing import Any, Callable, Generator, Self
 
-"""
-General SymPy exceptions and warnings.
-"""
 class SymPyDeprecationWarning(DeprecationWarning):
-    r"""
-    A warning for deprecated features of SymPy.
-
-    See the :ref:`deprecation-policy` document for details on when and how
-    things should be deprecated in SymPy.
-
-    Note that simply constructing this class will not cause a warning to be
-    issued. To do that, you must call the :func`sympy_deprecation_warning`
-    function. For this reason, it is not recommended to ever construct this
-    class directly.
-
-    Explanation
-    ===========
-
-    The ``SymPyDeprecationWarning`` class is a subclass of
-    ``DeprecationWarning`` that is used for all deprecations in SymPy. A
-    special subclass is used so that we can automatically augment the warning
-    message with additional metadata about the version the deprecation was
-    introduced in and a link to the documentation. This also allows users to
-    explicitly filter deprecation warnings from SymPy using ``warnings``
-    filters (see :ref:`silencing-sympy-deprecation-warnings`).
-
-    Additionally, ``SymPyDeprecationWarning`` is enabled to be shown by
-    default, unlike normal ``DeprecationWarning``\s, which are only shown by
-    default in interactive sessions. This ensures that deprecation warnings in
-    SymPy will actually be seen by users.
-
-    See the documentation of :func:`sympy_deprecation_warning` for a
-    description of the parameters to this function.
-
-    To mark a function as deprecated, you can use the :func:`@deprecated
-    <sympy.utilities.decorator.deprecated>` decorator.
-
-    See Also
-    ========
-    sympy.utilities.exceptions.sympy_deprecation_warning
-    sympy.utilities.exceptions.ignore_warnings
-    sympy.utilities.decorator.deprecated
-    sympy.testing.pytest.warns_deprecated_sympy
-
-    """
     def __init__(self, message, *, deprecated_since_version, active_deprecations_target) -> None:
         ...
     
@@ -116,29 +72,9 @@ def sympy_deprecation_warning(message, *, deprecated_since_version, active_depre
 
     >>> from sympy.utilities.exceptions import sympy_deprecation_warning
     >>> def is_this_zero(x, y=0):
-    ...     """
-    ...     Determine if x = 0.
-    ...
-    ...     Parameters
-    ...     ==========
-    ...
-    ...     x : Expr
-    ...       The expression to check.
-    ...
-    ...     y : Expr, optional
-    ...       If provided, check if x = y.
-    ...
-    ...       .. deprecated:: 1.1
-    ...
-    ...          The ``y`` argument to ``is_this_zero`` is deprecated. Use
-    ...          ``is_this_zero(x - y)`` instead.
-    ...
-    ...     """
     ...     from sympy import simplify
     ...
     ...     if y != 0:
-    ...         sympy_deprecation_warning("""
-    ...     The y argument to is_zero() is deprecated. Use is_zero(x - y) instead.""",
     ...             deprecated_since_version="1.1",
     ...             active_deprecations_target='is-this-zero-y-deprecation')
     ...     return simplify(x - y) == 0

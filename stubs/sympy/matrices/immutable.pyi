@@ -11,10 +11,6 @@ def sympify_mpmath_matrix(arg) -> ImmutableDenseMatrix:
     ...
 
 class ImmutableRepMatrix(RepMatrix, MatrixExpr):
-    """Immutable matrix based on RepMatrix
-
-    Uses DomainMAtrix as the internal representation.
-    """
     def __new__(cls, *args, **kwargs):
         ...
     
@@ -47,22 +43,6 @@ class ImmutableRepMatrix(RepMatrix, MatrixExpr):
 
 
 class ImmutableDenseMatrix(DenseMatrix, ImmutableRepMatrix):
-    """Create an immutable version of a matrix.
-
-    Examples
-    ========
-
-    >>> from sympy import eye, ImmutableMatrix
-    >>> ImmutableMatrix(eye(3))
-    Matrix([
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1]])
-    >>> _[0, 0] = 42
-    Traceback (most recent call last):
-    ...
-    TypeError: Cannot set values of ImmutableDenseMatrix
-    """
     _iterable = ...
     _class_priority = ...
     _op_priority = ...
@@ -70,26 +50,6 @@ class ImmutableDenseMatrix(DenseMatrix, ImmutableRepMatrix):
 
 ImmutableMatrix = ImmutableDenseMatrix
 class ImmutableSparseMatrix(SparseRepMatrix, ImmutableRepMatrix):
-    """Create an immutable version of a sparse matrix.
-
-    Examples
-    ========
-
-    >>> from sympy import eye, ImmutableSparseMatrix
-    >>> ImmutableSparseMatrix(1, 1, {})
-    Matrix([[0]])
-    >>> ImmutableSparseMatrix(eye(3))
-    Matrix([
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1]])
-    >>> _[0, 0] = 42
-    Traceback (most recent call last):
-    ...
-    TypeError: Cannot set values of ImmutableSparseMatrix
-    >>> _.shape
-    (3, 3)
-    """
     is_Matrix = ...
     _class_priority = ...
 

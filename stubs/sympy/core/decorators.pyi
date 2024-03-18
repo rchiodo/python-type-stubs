@@ -1,35 +1,8 @@
-"""
-SymPy core decorators.
 
-The purpose of this module is to expose decorators without any other
-dependencies, so that they can be easily imported anywhere in sympy/core.
-"""
 from functools import _Wrapped
 from typing import Any, Callable
 
 def _sympifyit(arg, retval=None) -> Any:
-    """
-    decorator to smartly _sympify function arguments
-
-    Explanation
-    ===========
-
-    @_sympifyit('other', NotImplemented)
-    def add(self, other):
-        ...
-
-    In add, other can be thought of as already being a SymPy object.
-
-    If it is not, the code is likely to catch an exception, then other will
-    be explicitly _sympified, and the whole code restarted.
-
-    if _sympify(arg) fails, NotImplemented will be returned
-
-    See also
-    ========
-
-    __sympifyit
-    """
     def deco(func):
         return __sympifyit(func, arg, retval)
 
@@ -37,37 +10,8 @@ def _sympifyit(arg, retval=None) -> Any:
 
 
 def __sympifyit(func, arg, retval=None) -> Any:
-    """Decorator to _sympify `arg` argument for function `func`.
-
-       Do not use directly -- use _sympifyit instead.
-    """
 
 def call_highest_priority(method_name) -> Callable:
-    """A decorator for binary special methods to handle _op_priority.
-
-    Explanation
-    ===========
-
-    Binary special methods in Expr and its subclasses use a special attribute
-    '_op_priority' to determine whose special method will be called to
-    handle the operation. In general, the object having the highest value of
-    '_op_priority' will handle the operation. Expr and subclasses that define
-    custom binary special methods (__mul__, etc.) should decorate those
-    methods with this decorator to add the priority logic.
-
-    The ``method_name`` argument is the name of the method of the other class
-    that will be called.  Use this decorator in the following manner::
-
-        # Call other.__rmul__ if other._op_priority > self._op_priority
-        @call_highest_priority('__rmul__')
-        def __mul__(self, other):
-            ...
-
-        # Call other.__mul__ if other._op_priority > self._op_priority
-        @call_highest_priority('__mul__')
-        def __rmul__(self, other):
-        ...
-    """
     ...
 
 def sympify_method_args(cls):

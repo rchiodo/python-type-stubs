@@ -1,11 +1,6 @@
 from typing import Any
 from sympy.printing.codeprinter import CodePrinter
 
-"""
-Python code printers
-
-This module contains Python code printers for plain Python as well as NumPy & SciPy enabled code.
-"""
 _kw = ...
 _known_functions = ...
 _known_functions_math = ...
@@ -38,28 +33,6 @@ class PythonCodePrinter(AbstractPythonCodePrinter):
 
 
 def pycode(expr, **settings) -> str | tuple[set[tuple[Any, str]], set[Any], str]:
-    """ Converts an expr to a string of Python code
-
-    Parameters
-    ==========
-
-    expr : Expr
-        A SymPy expression.
-    fully_qualified_modules : bool
-        Whether or not to write out full module names of functions
-        (``math.sin`` vs. ``sin``). default: ``True``.
-    standard : str or None, optional
-        Only 'python3' (default) is supported.
-        This parameter may be removed in the future.
-
-    Examples
-    ========
-
-    >>> from sympy import pycode, tan, Symbol
-    >>> pycode(tan(Symbol('x')) + 1)
-    'math.tan(x) + 1'
-
-    """
     ...
 
 _not_in_mpmath = ...
@@ -67,9 +40,6 @@ _in_mpmath = ...
 _known_functions_mpmath = ...
 _known_constants_mpmath = ...
 class MpmathPrinter(PythonCodePrinter):
-    """
-    Lambda printer for mpmath which maintains precision for floats
-    """
     printmethod = ...
     language = ...
     _kf = ...

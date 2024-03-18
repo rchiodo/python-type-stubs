@@ -1,8 +1,4 @@
-"""
 
-Routines for computing eigenvectors with DomainMatrix.
-
-"""
 from typing import Any
 
 

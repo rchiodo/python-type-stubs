@@ -1,10 +1,8 @@
 from typing import Self
 from sympy.utilities import public
 
-"""Definitions of common exceptions for `polys` module. """
 @public
 class BasePolynomialError(Exception):
-    """Base class for polynomial related exceptions. """
     def new(self, *args):
         ...
     
@@ -114,9 +112,6 @@ class UnificationFailed(BasePolynomialError):
 
 @public
 class UnsolvableFactorError(BasePolynomialError):
-    """Raised if ``roots`` is called with strict=True and a polynomial
-     having a factor whose solutions are not expressible in radicals
-     is encountered."""
     ...
 
 

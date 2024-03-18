@@ -19,7 +19,6 @@ from sympy.polys.domains.gmpyintegerring import GMPYIntegerRing
 from sympy.polys.domains.pythonrationalfield import PythonRationalField
 from sympy.polys.domains.gmpyrationalfield import GMPYRationalField
 
-"""Implementation of mathematical domains. """
 __all__ = ['Domain', 'FiniteField', 'IntegerRing', 'RationalField', 'RealField', 'ComplexField', 'AlgebraicField', 'PolynomialRing', 'FractionField', 'ExpressionDomain', 'PythonRational', 'GF', 'FF', 'ZZ', 'QQ', 'ZZ_I', 'QQ_I', 'RR', 'CC', 'EX', 'EXRAW']
 FF_python = ...
 FF_gmpy = ...

@@ -21,5 +21,4 @@ from sympy.printing.tableform import TableForm
 from sympy.printing.dot import dotprint
 from sympy.printing.maple import maple_code, print_maple_code
 
-"""Printing subsystem"""
 __all__ = ['pager_print', 'pretty', 'pretty_print', 'pprint', 'pprint_use_unicode', 'pprint_try_use_unicode', 'latex', 'print_latex', 'multiline_latex', 'mathml', 'print_mathml', 'python', 'print_python', 'pycode', 'ccode', 'print_ccode', 'cxxcode', 'fcode', 'print_fcode', 'smtlib_code', 'glsl_code', 'print_glsl', 'rcode', 'print_rcode', 'jscode', 'print_jscode', 'julia_code', 'mathematica_code', 'octave_code', 'rust_code', 'print_gtk', 'preview', 'srepr', 'print_tree', 'StrPrinter', 'sstr', 'sstrrepr', 'TableForm', 'dotprint', 'maple_code', 'print_maple_code']

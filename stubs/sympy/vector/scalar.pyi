@@ -2,12 +2,6 @@ from typing import Self
 from sympy.core import AtomicExpr
 
 class BaseScalar(AtomicExpr):
-    """
-    A coordinate symbol/base scalar.
-
-    Ideally, users should not instantiate this class.
-
-    """
     def __new__(cls, index, system, pretty_str=..., latex_str=...) -> Self:
         ...
     

@@ -4,10 +4,8 @@ from sympy.polys.domains.field import Field
 from sympy.polys.domains.simpledomain import SimpleDomain
 from sympy.utilities import public
 
-"""Implementation of :class:`ExpressionRawDomain` class. """
 @public
 class ExpressionRawDomain(Field, CharacteristicZero, SimpleDomain):
-    """A class for arbitrary expressions but without automatic simplification. """
     is_EXRAW = ...
     dtype = Expr
     zero = ...
@@ -23,19 +21,15 @@ class ExpressionRawDomain(Field, CharacteristicZero, SimpleDomain):
         ...
     
     def to_sympy(self, a):
-        """Convert ``a`` to a SymPy object. """
         ...
     
     def from_sympy(self, a) -> Expr:
-        """Convert SymPy's expression to ``dtype``. """
         ...
     
     def convert_from(self, a, K):
-        """Convert a domain element from another domain to EXRAW"""
         ...
     
     def get_field(self) -> Self:
-        """Returns a field associated with ``self``. """
         ...
     
     def sum(self, items) -> Order:

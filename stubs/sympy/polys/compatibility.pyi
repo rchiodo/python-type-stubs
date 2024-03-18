@@ -3,7 +3,6 @@ from sympy.polys.rings import PolyElement
 from sympy.polys.rootisolation import RealInterval
 from sympy.utilities import public
 
-"""Compatibility interface between dense and sparse polys. """
 @public
 class IPolys:
     symbols = ...

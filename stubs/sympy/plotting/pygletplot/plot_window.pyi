@@ -2,17 +2,6 @@ from sympy.plotting.pygletplot.managed_window import ManagedWindow
 
 class PlotWindow(ManagedWindow):
     def __init__(self, plot, antialiasing=..., ortho=..., invert_mouse_zoom=..., linewidth=..., caption=..., **kwargs) -> None:
-        """
-        Named Arguments
-        ===============
-
-        antialiasing = True
-            True OR False
-        ortho = False
-            True OR False
-        invert_mouse_zoom = False
-            True OR False
-        """
         ...
     
     def setup(self) -> None:

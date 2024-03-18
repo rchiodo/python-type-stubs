@@ -1,22 +1,9 @@
-"""
 
-Module for the DomainScalar class.
-
-A DomainScalar represents an element which is in a particular
-Domain. The idea is that the DomainScalar class provides the
-convenience routines for unifying elements with different domains.
-
-It assists in Scalar Multiplication and getitem for DomainMatrix.
-
-"""
 from types import NotImplementedType
 from typing import Any, Self
 
 
 class DomainScalar:
-    r"""
-    docstring
-    """
     def __new__(cls, element, domain) -> Self:
         ...
     

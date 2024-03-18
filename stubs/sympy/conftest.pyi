@@ -14,7 +14,6 @@ def pytest_addoption(parser) -> None:
     ...
 
 def pytest_collection_modifyitems(config, items) -> None:
-    """pytest hook."""
     ...
 
 @pytest.fixture(autouse=True, scope="module")

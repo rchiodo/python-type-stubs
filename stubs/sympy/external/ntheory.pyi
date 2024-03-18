@@ -12,15 +12,12 @@ def remove(x, f) -> tuple[Literal[0], Literal[0]] | tuple[Any, Any | None] | tup
     ...
 
 def factorial(x) -> int:
-    """Return x!."""
     ...
 
 def sqrt(x) -> int:
-    """Integer square root of x."""
     ...
 
 def sqrtrem(x) -> tuple[int, int]:
-    """Integer square root of x and remainder."""
     ...
 
 if sys.version_info[: 2] >= (3, 9):
@@ -28,44 +25,27 @@ if sys.version_info[: 2] >= (3, 9):
     lcm = ...
 else:
     def gcd(*args) -> int:
-        """gcd of multiple integers."""
         ...
     
     def lcm(*args) -> int:
-        """lcm of multiple integers."""
         ...
     
 def gcdext(a, b) -> tuple[Literal[0], Literal[0], Literal[0]] | tuple[Any, Any, Any] | tuple[Any, Any | int, Any | int]:
     ...
 
 def is_square(x) -> bool:
-    """Return True if x is a square number."""
     ...
 
 def invert(x, m):
-    """Modular inverse of x modulo m.
-
-    Returns y such that x*y == 1 mod m.
-
-    Uses ``math.pow`` but reproduces the behaviour of ``gmpy2.invert``
-    which raises ZeroDivisionError if no inverse exists.
-    """
     ...
 
 def legendre(x, y) -> Literal[0, 1, -1]:
-    """Legendre symbol (x / y).
-
-    Following the implementation of gmpy2,
-    the error is raised only when y is an even number.
-    """
     ...
 
 def jacobi(x, y) -> int:
-    """Jacobi symbol (x / y)."""
     ...
 
 def kronecker(x, y) -> int:
-    """Kronecker symbol (x / y)."""
     ...
 
 def iroot(y, n) -> tuple[Any, Literal[True]] | tuple[int, bool] | tuple[Literal[1], Literal[False]] | tuple[Any | int, Any]:
