@@ -1,5 +1,7 @@
-from typing import List
+from typing import List, Self
+from sympy import Indexed
 from sympy.core.basic import Basic
+from sympy.matrices import Matrix
 from sympy.tensor.array.mutable_ndim_array import MutableNDimArray
 from sympy.tensor.array.ndim_array import ArrayKind, ImmutableNDimArray, NDimArray
 

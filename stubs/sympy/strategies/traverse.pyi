@@ -1,4 +1,7 @@
 """Strategies to Traverse a Tree."""
+from typing import Any, Callable
+
+
 def top_down(rule, fns=...) -> Callable[[Any], Any]:
     """Apply a rule down a tree running it on the top nodes first."""
     ...

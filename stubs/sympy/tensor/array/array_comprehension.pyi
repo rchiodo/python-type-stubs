@@ -1,4 +1,7 @@
+from typing import Any, Literal, Self
+from sympy import ImmutableDenseNDimArray
 from sympy.core import Basic
+from sympy.matrices import Matrix
 
 class ArrayComprehension(Basic):
     """
@@ -278,7 +281,7 @@ class ArrayComprehensionMap(ArrayComprehension):
         ...
     
     @property
-    def func(self) -> type[_]:
+    def func(self) -> type[Any]:
         class _(ArrayComprehensionMap):
             ...
         

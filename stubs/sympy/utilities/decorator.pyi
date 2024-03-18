@@ -1,9 +1,14 @@
 """Useful utility decorators. """
-def threaded_factory(func, use_add) -> _Wrapped[Callable[..., Any], Any, Callable[..., Any], Any]:
+from functools import _Wrapped
+from types import FunctionType
+from typing import Any, Callable
+
+
+def threaded_factory(func, use_add) -> _Wrapped[..., Any, ..., Any]:
     """A factory for ``threaded`` decorators. """
     ...
 
-def threaded(func) -> _Wrapped[Callable[..., Any], Any, Callable[..., Any], Any]:
+def threaded(func) -> _Wrapped[..., Any, ..., Any]:
     """Apply ``func`` to sub--elements of an object, including :class:`~.Add`.
 
     This decorator is intended to make it uniformly possible to apply a
@@ -22,7 +27,7 @@ def threaded(func) -> _Wrapped[Callable[..., Any], Any, Callable[..., Any], Any]
     """
     ...
 
-def xthreaded(func) -> _Wrapped[Callable[..., Any], Any, Callable[..., Any], Any]:
+def xthreaded(func) -> _Wrapped[..., Any, ..., Any]:
     """Apply ``func`` to sub--elements of an object, excluding :class:`~.Add`.
 
     This decorator is intended to make it uniformly possible to apply a
@@ -129,7 +134,7 @@ def memoize_property(propfunc) -> property:
     the corresponding property name with an attached underscore."""
     ...
 
-def deprecated(message, *, deprecated_since_version, active_deprecations_target, stacklevel=...) -> Callable[..., type[wrapper] | _Wrapped[Callable[..., Any], Any, Callable[..., Any], Any]]:
+def deprecated(message, *, deprecated_since_version, active_deprecations_target, stacklevel=...) -> Callable[..., type[Any] | _Wrapped[..., Any, ..., Any]]:
     '''
     Mark a function as deprecated.
 

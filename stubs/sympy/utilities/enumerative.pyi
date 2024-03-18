@@ -88,6 +88,9 @@ total multiplicity available for that component (u).  This saves
 time that would be spent skipping over zeros.
 
 """
+from typing import Any, Generator
+
+
 class PartComponent:
     """Internal class used in support of the multiset partitions
     enumerators and the associated visitor functions.

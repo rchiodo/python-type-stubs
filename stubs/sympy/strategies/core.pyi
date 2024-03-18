@@ -1,5 +1,5 @@
 from collections.abc import Callable, Mapping
-from typing import TypeVar
+from typing import Any, TypeVar
 
 """ Generic SymPy-Independent Strategies """
 _S = TypeVar('_S')

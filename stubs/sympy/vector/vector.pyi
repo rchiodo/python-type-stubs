@@ -1,5 +1,10 @@
+from typing import Any, Callable, Literal, Self
+from sympy import ImmutableDenseMatrix, Pow
+from sympy.core.add import Add
 from sympy.core.expr import AtomicExpr, Expr
+from sympy.series.order import Order
 from sympy.vector.basisdependent import BasisDependent, BasisDependentAdd, BasisDependentMul, BasisDependentZero
+from sympy.vector.dyadic import DyadicZero
 
 class Vector(BasisDependent):
     """

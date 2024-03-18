@@ -1,4 +1,6 @@
-from sympy.stats.rv import Distribution, NamedArgsMixin, PSpace
+from typing import Any, Self
+from sympy.matrices.expressions.sets import MatrixSet
+from sympy.stats.rv import Distribution, MatrixDomain, NamedArgsMixin, PSpace, RandomMatrixSymbol
 
 class MatrixPSpace(PSpace):
     """

@@ -1,4 +1,8 @@
-from sympy.stats.joint_rv import JointDistribution
+from sympy import Basic, Equality, Ne, Piecewise, Product
+from sympy.core.relational import Relational
+from sympy.matrices.expressions.matexpr import MatrixElement
+from sympy.stats.joint_rv import JointDistribution, JointRandomSymbol
+from sympy.stats.rv import RandomSymbol
 
 __all__ = ['JointRV', 'MultivariateNormal', 'MultivariateLaplace', 'Dirichlet', 'GeneralizedMultivariateLogGamma', 'GeneralizedMultivariateLogGammaOmega', 'Multinomial', 'MultivariateBeta', 'MultivariateEwens', 'MultivariateT', 'NegativeMultinomial', 'NormalGamma']
 def multivariate_rv(cls, sym, *args) -> RandomSymbol | JointRandomSymbol:

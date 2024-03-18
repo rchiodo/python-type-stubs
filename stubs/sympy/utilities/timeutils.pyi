@@ -1,4 +1,7 @@
 """Simple tools for timing functions' execution, when IPython is not available. """
+from typing import Any, Callable
+
+
 _scales = ...
 _units = ...
 def timed(func, setup=..., limit=...) -> tuple[int, float, float, str]:

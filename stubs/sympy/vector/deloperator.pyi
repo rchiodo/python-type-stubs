@@ -1,4 +1,8 @@
+from typing import Self
 from sympy.core import Basic
+from sympy.core.add import Add
+from sympy.vector.operators import Curl, Divergence, Gradient
+from sympy.vector.vector import VectorAdd, VectorZero
 
 class Del(Basic):
     """

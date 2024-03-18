@@ -1,5 +1,13 @@
+from typing import Any, Literal, Self
+from sympy import Basic, Equality, Integral, Ne, Piecewise, Sum
+from sympy.core.add import Add
 from sympy.core.expr import Expr
+from sympy.core.function import Lambda
+from sympy.core.relational import Relational
+from sympy.series.order import Order
+from sympy.stats.frv_types import BernoulliDistribution
 from sympy.stats.rv import RandomSymbol, is_random
+from sympy.stats.symbolic_multivariate_probability import CrossCovarianceMatrix, ExpectationMatrix, VarianceMatrix
 
 __all__ = ['Probability', 'Expectation', 'Variance', 'Covariance']
 @is_random.register(Expr)

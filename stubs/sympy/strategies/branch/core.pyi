@@ -1,4 +1,7 @@
 """ Generic SymPy-Independent Strategies """
+from typing import Any, Callable, Generator
+
+
 def identity(x) -> Generator[Any, Any, None]:
     ...
 

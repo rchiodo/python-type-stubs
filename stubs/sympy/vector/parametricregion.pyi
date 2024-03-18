@@ -1,4 +1,5 @@
 from functools import singledispatch
+from typing import Any, Self
 from sympy.core import Basic
 from sympy.geometry import Curve, Ellipse, Point, Polygon, Segment
 from sympy.vector import ImplicitRegion

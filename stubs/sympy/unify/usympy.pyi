@@ -2,6 +2,12 @@
 
 See sympy.unify for module level docstring
 See sympy.unify.core for algorithmic docstring """
+from typing import Any, Callable, Generator
+
+from sympy import Basic
+from sympy.unify.core import Compound, CondVariable, Variable
+
+
 basic_new_legal = ...
 eval_false_legal = ...
 illegal = ...

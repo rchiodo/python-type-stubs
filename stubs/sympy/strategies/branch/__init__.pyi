@@ -1,4 +1,4 @@
-from sympy.strategies.branch. import traverse
+from sympy.strategies.branch import traverse
 from sympy.strategies.branch.core import chain, condition, debug, do_one, exhaust, identity, multiplex, notempty, onaction, sfilter, yieldify
 from sympy.strategies.branch.tools import canon
 

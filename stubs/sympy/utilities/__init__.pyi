@@ -1,4 +1,4 @@
-from sympy.utilities.iterables import capture, cartes, dict_merge, flatten, group, has_dups, has_variety, numbered_symbols, postfixes, prefixes, reshape, rotations, sift, subsets, take, topological_sort, unflatten, variations
+from sympy.utilities.iterables import capture, dict_merge, flatten, group, has_dups, has_variety, numbered_symbols, postfixes, prefixes, reshape, rotations, sift, subsets, take, topological_sort, unflatten, variations
 from sympy.utilities.misc import filldedent
 from sympy.utilities.lambdify import lambdify
 from sympy.utilities.decorator import memoize_property, public, threaded, xthreaded

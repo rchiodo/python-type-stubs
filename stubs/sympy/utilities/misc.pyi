@@ -1,4 +1,7 @@
 """Miscellaneous stuff that does not really fit anywhere else."""
+from typing import Any, Callable, LiteralString
+
+
 class Undecidable(ValueError):
     ...
 

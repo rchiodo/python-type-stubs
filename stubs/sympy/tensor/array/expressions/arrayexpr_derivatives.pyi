@@ -1,4 +1,5 @@
 from functools import singledispatch
+from sympy import Basic
 from sympy.core.expr import Expr
 from sympy.matrices.expressions.hadamard import HadamardProduct
 from sympy.matrices.expressions.inverse import Inverse
@@ -6,7 +7,7 @@ from sympy.matrices.expressions.matexpr import MatrixExpr, MatrixSymbol
 from sympy.matrices.expressions.special import Identity, OneMatrix
 from sympy.matrices.expressions.transpose import Transpose
 from sympy.matrices.expressions.applyfunc import ElementwiseApplyFunction
-from sympy.tensor.array.expressions.array_expressions import ArrayAdd, ArrayContraction, ArrayDiagonal, ArrayElementwiseApplyFunc, ArraySymbol, ArrayTensorProduct, PermuteDims, Reshape, _ArrayExpr
+from sympy.tensor.array.expressions.array_expressions import ArrayAdd, ArrayContraction, ArrayDiagonal, ArrayElementwiseApplyFunc, ArraySymbol, ArrayTensorProduct, PermuteDims, Reshape, _ArrayExpr, ZeroArray
 
 @singledispatch
 def array_derive(expr, x):

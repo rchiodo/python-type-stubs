@@ -1,5 +1,13 @@
+from typing import Any, Dict, Generator, Literal, Self
+from sympy import Basic, Equality, FiniteSet, Ne, Piecewise, Sum
 from sympy.core.cache import cacheit
-from sympy.stats.rv import ConditionalDomain, Distribution, IndependentProductPSpace, NamedArgsMixin, PSpace, ProductDomain, RandomDomain, SinglePSpace
+from sympy.core.function import Lambda
+from sympy.core.logic import Or
+from sympy.core.relational import Relational
+from sympy.series.order import Order
+from sympy.stats.crv import ProductContinuousDomain
+from sympy.stats.drv import ProductDiscreteDomain
+from sympy.stats.rv import ConditionalDomain, Density, Distribution, IndependentProductPSpace, NamedArgsMixin, PSpace, ProductDomain, RandomDomain, SinglePSpace
 
 """
 Finite Discrete Random Variables Module

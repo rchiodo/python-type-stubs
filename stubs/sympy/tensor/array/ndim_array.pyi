@@ -1,6 +1,12 @@
+from types import NotImplementedType
+from typing import Any, Generator, Self
+from sympy import ImmutableDenseNDimArray, ImmutableSparseNDimArray
 from sympy.core.basic import Basic
+from sympy.core.function import UndefinedFunction
 from sympy.core.kind import Kind
 from sympy.printing.defaults import Printable
+from sympy.tensor.array.array_derivatives import ArrayDerivative
+from sympy.tensor.array.expressions.array_expressions import ArrayContraction, ArrayTensorProduct, PermuteDims, ZeroArray
 
 class ArrayKind(Kind):
     """

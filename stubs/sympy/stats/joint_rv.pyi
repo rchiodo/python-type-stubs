@@ -1,4 +1,12 @@
-from sympy.stats.rv import Distribution, NamedArgsMixin, ProductPSpace, RandomSymbol
+from typing import Any, Self
+from sympy import Basic, Equality, FiniteSet, Indexed, Integral, Ne, ProductSet, Sum
+from sympy.core.expr import Expr
+from sympy.core.function import Lambda
+from sympy.core.relational import Relational
+from sympy.stats.crv import ProductContinuousDomain, SingleContinuousPSpace
+from sympy.stats.drv import ProductDiscreteDomain, SingleDiscretePSpace
+from sympy.stats.frv import ProductFiniteDomain
+from sympy.stats.rv import Distribution, NamedArgsMixin, ProductDomain, ProductPSpace, RandomSymbol, SingleDomain
 
 """
 Joint Random Variables Module

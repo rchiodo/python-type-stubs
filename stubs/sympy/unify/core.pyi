@@ -15,6 +15,9 @@ It is modified in the following ways:
 A more traditional version can be found here
 http://aima.cs.berkeley.edu/python/logic.html
 """
+from typing import Any, Generator
+
+
 class Compound:
     """ A little class to represent an interior node in the tree
 

@@ -1,3 +1,4 @@
+from typing import Self
 from sympy.core import AtomicExpr
 
 class BaseScalar(AtomicExpr):

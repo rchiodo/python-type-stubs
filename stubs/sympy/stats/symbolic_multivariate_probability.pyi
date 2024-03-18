@@ -1,4 +1,8 @@
+from typing import Self
+from sympy import Basic
+from sympy.core.add import Add
 from sympy.matrices.expressions.matexpr import MatrixExpr
+from sympy.matrices.expressions.special import ZeroMatrix
 from sympy.stats.symbolic_probability import Covariance, Expectation, Variance
 
 class ExpectationMatrix(Expectation, MatrixExpr):

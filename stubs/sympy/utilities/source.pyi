@@ -1,6 +1,9 @@
 """
 This module adds several functions for interactive source code inspection.
 """
+from typing import Any, Literal
+
+
 def get_class(lookup_view) -> Any | str:
     """
     Convert a string version of a class name to the object.

@@ -1,5 +1,8 @@
+from typing import Self
+from sympy.series.order import Order
 from sympy.vector.basisdependent import BasisDependent, BasisDependentAdd, BasisDependentMul, BasisDependentZero
 from sympy.core.expr import AtomicExpr
+from sympy.vector.vector import VectorZero
 
 class Dyadic(BasisDependent):
     """

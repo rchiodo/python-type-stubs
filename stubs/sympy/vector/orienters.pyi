@@ -1,3 +1,4 @@
+from typing import Self
 from sympy.core.basic import Basic
 from sympy.core.cache import cacheit
 

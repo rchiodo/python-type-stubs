@@ -9,6 +9,13 @@
     objects instead.  When things stabilize this could be a useful
     refactoring.
 """
+from typing import Any
+
+from sympy import Idx, Indexed, Piecewise
+from sympy.core.function import Function
+from sympy.functions.elementary.exponential import exp
+
+
 class IndexConformanceException(Exception):
     ...
 

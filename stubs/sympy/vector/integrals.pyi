@@ -1,4 +1,7 @@
+from typing import Literal, Self
+from sympy import Equality, Ne
 from sympy.core import Basic
+from sympy.core.relational import Relational
 
 class ParametricIntegral(Basic):
     """

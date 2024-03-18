@@ -1,4 +1,10 @@
+from typing import Self
+from sympy import Basic
+from sympy.stats.crv import ProductContinuousDomain
+from sympy.stats.drv import ProductDiscreteDomain
+from sympy.stats.frv import ProductFiniteDomain
 from sympy.stats.joint_rv import ProductPSpace
+from sympy.stats.rv import ProductDomain
 
 class StochasticPSpace(ProductPSpace):
     """

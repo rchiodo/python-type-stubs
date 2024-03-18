@@ -1,16 +1,29 @@
-from typing import List as tList, Tuple as tTuple, Union as tUnion
+from typing import Any, Generator, List as tList, Literal, Self, Tuple as tTuple, Union as tUnion
+from sympy import Equality, Integral, Ne, Piecewise, Sum
+from sympy.core.add import Add
 from sympy.core.basic import Basic
 from sympy.core.cache import cacheit
 from sympy.core.function import Lambda
+from sympy.core.logic import And
+from sympy.core.mul import Mul
 from sympy.core.numbers import Integer
+from sympy.core.relational import Eq, Relational
 from sympy.core.symbol import Symbol
 from sympy.logic.boolalg import Boolean
 from sympy.matrices.immutable import ImmutableMatrix
+from sympy.series.order import Order
 from sympy.sets.conditionset import ConditionSet
 from sympy.sets.fancysets import Range
 from sympy.sets.sets import FiniteSet
+from sympy.stats.crv_types import GammaDistribution, NormalDistribution
+from sympy.stats.drv_types import PoissonDistribution
+from sympy.stats.frv_types import BernoulliDistribution
+from sympy.stats.joint_rv import JointDistribution, JointRandomSymbol
+from sympy.stats.joint_rv_types import JointDistributionHandmade
+from sympy.stats.symbolic_multivariate_probability import ExpectationMatrix
+from sympy.stats.symbolic_probability import Expectation, Probability
 from sympy.tensor.indexed import Indexed
-from sympy.stats.rv import RandomIndexedSymbol, is_random
+from sympy.stats.rv import Density, Distribution, RandomIndexedSymbol, RandomSymbol, is_random
 
 EmptySet = ...
 __all__ = ['StochasticProcess', 'DiscreteTimeStochasticProcess', 'DiscreteMarkovChain', 'TransitionMatrixOf', 'StochasticStateSpaceOf', 'GeneratorMatrixOf', 'ContinuousMarkovChain', 'BernoulliProcess', 'PoissonProcess', 'WienerProcess', 'GammaProcess']

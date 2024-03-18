@@ -2,6 +2,9 @@
 
 This file assumes knowledge of Basic and little else.
 """
+from typing import Any, Callable
+
+
 def rm_id(isid, new=...) -> Callable[..., Any]:
     """ Create a rule to remove identities.
 

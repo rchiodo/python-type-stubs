@@ -1,4 +1,4 @@
-from sympy.strategies. import branch, rl, traverse
+from sympy.strategies import branch, rl, traverse
 from sympy.strategies.rl import distribute, flatten, glom, rebuild, rm_id, sort, unpack
 from sympy.strategies.util import new
 from sympy.strategies.core import chain, condition, debug, do_one, exhaust, minimize, null_safe, tryit
